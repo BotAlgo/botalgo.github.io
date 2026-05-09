@@ -162,10 +162,10 @@ nav a.nav-active {
 /* ── HERO ── */
 #hero {
   min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: flex-start;
   flex-direction: column;
   text-align: center;
-  padding: 6rem 2rem 4rem;
+  padding: 1.2rem 2rem 1rem;
   position: relative;
   overflow: hidden;
 }
@@ -797,17 +797,24 @@ footer strong { color: var(--green); }
 .scroll-top {
   position: fixed;
   bottom: 2rem; right: 2rem;
-  background: var(--green);
-  color: #000;
-  width: 40px; height: 40px;
+  background: linear-gradient(145deg, #00f080, #00c060);
+  color: #FFFFFF;
+  width: 42px; height: 42px;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 900;
   cursor: pointer;
   opacity: 0;
-  transition: opacity .3s;
+  transition: opacity .3s, transform .2s, box-shadow .2s;
   z-index: 200;
   text-decoration: none;
+  text-shadow: 0 2px 3px rgba(0,0,0,0.45), 0 1px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35), 0 2px 0 rgba(0,180,80,0.5), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.scroll-top:hover {
+  transform: translateY(-2px) scale(1.08);
+  box-shadow: 0 6px 18px rgba(0,230,118,0.55), 0 2px 0 rgba(0,180,80,0.5), inset 0 1px 0 rgba(255,255,255,0.25);
 }
 .scroll-top.visible { opacity: 1; }
 
@@ -1708,6 +1715,10 @@ body.en div.en-content { display: block; }
         <a href="#" class="nav-dropdown-item" onclick="openVideoGallery();return false;" style="display:flex;align-items:center;gap:10px;">
           <span style="font-size:16px;">🎥</span>
           <span><span class="it-content" style="font-weight:700;">VIDEO</span><span class="en-content" style="font-weight:700;">VIDEOS</span><br><span style="font-size:10px;color:var(--text-muted);font-weight:400;"><span class="it-content">Demo · Tutorial · Funzioni</span><span class="en-content">Demo · Tutorial · Features</span></span></span>
+        </a>
+        <a href="#" class="nav-dropdown-item" onclick="openDocGallery();return false;" style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:16px;">📄</span>
+          <span><span class="it-content" style="font-weight:700;">DOCUMENTI</span><span class="en-content" style="font-weight:700;">DOCUMENTS</span><br><span style="font-size:10px;color:var(--text-muted);font-weight:400;"><span class="it-content">PDF · Guide · Manuali</span><span class="en-content">PDFs · Guides · Manuals</span></span></span>
         </a>
       </div>
     </div>
@@ -2712,6 +2723,28 @@ function closeVideoGallery() {
   document.body.style.overflow = '';
   playZoomCloseSound();
 }
+function openDocGallery() {
+  document.getElementById('doc-gallery-modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  try { playNavSound(); } catch(e){}
+}
+function closeDocGallery() {
+  document.getElementById('doc-gallery-modal').style.display = 'none';
+  document.body.style.overflow = '';
+  playZoomCloseSound();
+}
+function openDocZoom(icon, title, desc) {
+  document.getElementById('doc-zoom-icon').textContent = icon;
+  document.getElementById('doc-zoom-title').textContent = title;
+  document.getElementById('doc-zoom-desc').textContent = desc;
+  var overlay = document.getElementById('doc-zoom-overlay');
+  overlay.style.display = 'flex';
+  playZoomOpenSound();
+}
+function closeDocZoom() {
+  document.getElementById('doc-zoom-overlay').style.display = 'none';
+  playZoomCloseSound();
+}
 function openGallery() {
   document.getElementById('gallery-modal').style.display = 'block';
   document.body.style.overflow = 'hidden';
@@ -2786,7 +2819,7 @@ function closeZoom() {
   playZoomCloseSound();
 }
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeZoom(); closeGallery(); closeVideoGallery(); }
+  if (e.key === 'Escape') { closeZoom(); closeGallery(); closeVideoGallery(); closeDocGallery(); closeDocZoom(); }
 });
 
 function scrollToEl(id) {
@@ -3052,6 +3085,7 @@ function playCtaSound() {
     <div class="cta-wrap">
       <a target="_blank" rel="noopener noreferrer" href="https://lemonsqueezy.com" onclick="playCtaSound()" class="btn-primary">ABBONATI SU LEMON SQUEEZY</a>
       <a href="#prodotti" onclick="playCtaSound()" class="btn-secondary">SCOPRI DI PIÙ</a>
+      <a href="#prezzi" onclick="playCtaSound();setTimeout(function(){document.getElementById('prezzi').scrollIntoView({behavior:'smooth',block:'start'})},50);return false;" class="btn-secondary" style="border-color:var(--gold-light);color:var(--gold-light);background:rgba(200,148,10,0.08);" onmouseover="this.style.background='rgba(200,148,10,0.18)'" onmouseout="this.style.background='rgba(200,148,10,0.08)'">💎 SCEGLI IL TUO PIANO</a>
     </div>
   </div>
 
@@ -3073,6 +3107,7 @@ function playCtaSound() {
     <div class="cta-wrap">
       <a target="_blank" rel="noopener noreferrer" href="https://lemonsqueezy.com" onclick="playCtaSound()" class="btn-primary">SUBSCRIBE ON LEMON SQUEEZY</a>
       <a href="#prodotti" onclick="playCtaSound()" class="btn-secondary">LEARN MORE</a>
+      <a href="#prezzi" onclick="playCtaSound();setTimeout(function(){document.getElementById('prezzi').scrollIntoView({behavior:'smooth',block:'start'})},50);return false;" class="btn-secondary" style="border-color:var(--gold-light);color:var(--gold-light);background:rgba(200,148,10,0.08);" onmouseover="this.style.background='rgba(200,148,10,0.18)'" onmouseout="this.style.background='rgba(200,148,10,0.08)'">💎 CHOOSE YOUR PLAN</a>
     </div>
   </div>
 
@@ -3402,10 +3437,10 @@ function playCtaSound() {
     </table>
   </div>
 
-  <p style="text-align:center; color: var(--text-muted); font-size:13px; font-family:'Inter',sans-serif; margin-top:24px;">
-    <span class="it-content">💳 Pagamento sicuro via Lemon Squeezy — Carta di credito, PayPal</span>
-    <span class="en-content">💳 Secure payment via Lemon Squeezy — Credit card, PayPal</span>
-  </p>
+  <div style="max-width:700px;margin:18px auto 0;padding:14px 22px;background:rgba(124,58,237,0.05);border:1.5px solid rgba(124,58,237,0.45);border-radius:10px;text-align:center;font-size:14px;font-family:'Inter',sans-serif;font-weight:500;letter-spacing:0.3px;cursor:default;transition:border-color .25s,box-shadow .25s,background .25s;" onmouseenter="this.style.borderColor='rgba(124,58,237,0.85)';this.style.boxShadow='0 0 22px rgba(124,58,237,0.25)';this.style.background='rgba(124,58,237,0.09)'" onmouseleave="this.style.borderColor='rgba(124,58,237,0.45)';this.style.boxShadow='';this.style.background='rgba(124,58,237,0.05)'">
+    <span class="it-content">💳 Pagamento sicuro via Lemon Squeezy — <strong style="color:#7C3AED;font-weight:700;">Carta di credito</strong> &nbsp;·&nbsp; <strong style="color:#FFC439;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,0.4);">Pay</strong><strong style="color:#009cde;font-weight:700;">Pal</strong></span>
+    <span class="en-content">💳 Secure payment via Lemon Squeezy — <strong style="color:#7C3AED;font-weight:700;">Credit card</strong> &nbsp;·&nbsp; <strong style="color:#FFC439;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,0.4);">Pay</strong><strong style="color:#009cde;font-weight:700;">Pal</strong></span>
+  </div>
 
   <script>
     var isAnnual = false;
@@ -3655,7 +3690,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <div style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s,box-shadow .25s;" onmouseenter="this.style.borderColor='rgba(200,148,10,.9)';this.style.boxShadow='0 0 24px rgba(200,148,10,.35)'" onmouseleave="this.style.borderColor='var(--border)';this.style.boxShadow=''">
         <div style="overflow:hidden;flex:1;min-height:0;">
-          <img src="FOTO_LIVE.png" onclick="openZoom('FOTO_LIVE.png','Dal Segnale all\'Ordine')" style="cursor:pointer;width:100%;height:28vh;object-fit:cover;display:block;transition:transform .25s;" onmouseenter="this.style.transform='scale(1.03)'" onmouseleave="this.style.transform='scale(1)'">
+          <img src="FOTO_LIVE.png" onclick="openZoom('FOTO_LIVE.png','Dal Segnale → All\'Ordine')" style="cursor:pointer;width:100%;height:28vh;object-fit:cover;display:block;transition:transform .25s;" onmouseenter="this.style.transform='scale(1.03)'" onmouseleave="this.style.transform='scale(1)'">
         </div>
         <div style="padding:8px 12px;text-align:center;">
           <div style="font-family:var(--mono);font-size:12px;color:var(--gold);font-weight:700;margin-bottom:2px;"><span class="it-content">Dal Segnale → All'Ordine</span><span class="en-content">From Signal → To Order</span></div>
@@ -3730,5 +3765,77 @@ window.addEventListener('beforeinstallprompt', e => {
   if (btn) { btn.style.display = 'flex'; }
 });
 </script>
+<!-- DOCUMENTI GALLERY MODAL -->
+<div id="doc-gallery-modal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);overflow-y:auto;padding:60px 20px 40px;" onclick="if(event.target===this)closeDocGallery();">
+  <button onclick="closeDocGallery()" style="position:fixed;top:18px;right:18px;background:rgba(255,68,68,.18);border:2px solid rgba(255,68,68,.55);color:#ff6666;font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;cursor:pointer;font-family:var(--mono);letter-spacing:.12em;transition:all .2s;z-index:100000;display:flex;align-items:center;gap:8px;" onmouseenter="this.style.background='rgba(255,68,68,.4)';this.style.borderColor='rgba(255,68,68,.9)';this.style.color='#fff'" onmouseleave="this.style.background='rgba(255,68,68,.18)';this.style.borderColor='rgba(255,68,68,.55)';this.style.color='#ff6666'">✕ &nbsp;<span class="it-content">CHIUDI</span><span class="en-content">CLOSE</span></button>
+  <div style="max-width:760px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--display);font-size:32px;color:var(--gold);letter-spacing:4px;margin-bottom:.4rem;">📄 <span class="it-content">DOCUMENTI</span><span class="en-content">DOCUMENTS</span></div>
+    <div style="font-family:var(--mono);font-size:12px;color:var(--text-muted);letter-spacing:.15em;margin-bottom:2rem;"><span class="it-content">PDF · Guide · Manuali</span><span class="en-content">PDFs · Guides · Manuals</span></div>
+
+    <!-- GRID 2x2 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.5rem;">
+
+      <!-- TOP-LEFT: BOT ALGO TRADINGVIEW -->
+      <div onclick="openDocZoom('📊','Manuale Bot Algo','Guida completa all\'uso di tutti i parametri Pine Script v6')" style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .25s,box-shadow .25s,transform .2s;" onmouseenter="this.style.borderColor='rgba(200,148,10,.9)';this.style.boxShadow='0 0 28px rgba(200,148,10,.4)';this.style.transform='translateY(-3px)'" onmouseleave="this.style.borderColor='var(--border)';this.style.boxShadow='';this.style.transform='translateY(0)'">
+        <div style="background:rgba(200,148,10,0.07);border-bottom:1px solid var(--border);padding:34px 12px;display:flex;align-items:center;justify-content:center;font-size:60px;">📊</div>
+        <div style="padding:12px 14px;text-align:center;flex:1;">
+          <div style="font-family:var(--mono);font-size:13px;color:var(--gold);font-weight:700;margin-bottom:5px;"><span class="it-content">Manuale Bot Algo</span><span class="en-content">Bot Algo Manual</span></div>
+          <div style="font-size:12px;color:var(--text-muted);line-height:1.5;"><span class="it-content">Guida completa all'uso di tutti i parametri Pine Script</span><span class="en-content">Complete guide to all Pine Script parameters</span></div>
+        </div>
+        <div style="padding:10px 14px;"><div style="font-family:var(--mono);font-size:11px;color:var(--text-muted);text-align:center;background:var(--bg3);border-radius:5px;padding:6px 8px;border:1px solid var(--border);">🔒 <span class="it-content">In arrivo</span><span class="en-content">Coming soon</span></div></div>
+      </div>
+
+      <!-- TOP-RIGHT: PYTHON BRIDGE -->
+      <div onclick="openDocZoom('🐍','Python Bridge','Setup e configurazione del bridge TradingView → Quantower')" style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .25s,box-shadow .25s,transform .2s;" onmouseenter="this.style.borderColor='rgba(200,148,10,.9)';this.style.boxShadow='0 0 28px rgba(200,148,10,.4)';this.style.transform='translateY(-3px)'" onmouseleave="this.style.borderColor='var(--border)';this.style.boxShadow='';this.style.transform='translateY(0)'">
+        <div style="background:rgba(0,188,212,0.07);border-bottom:1px solid var(--border);padding:34px 12px;display:flex;align-items:center;justify-content:center;font-size:60px;">🐍</div>
+        <div style="padding:12px 14px;text-align:center;flex:1;">
+          <div style="font-family:var(--mono);font-size:13px;color:var(--gold);font-weight:700;margin-bottom:5px;">Python Bridge</div>
+          <div style="font-size:12px;color:var(--text-muted);line-height:1.5;"><span class="it-content">Setup e configurazione del bridge TV → Quantower</span><span class="en-content">Setup and configuration of TV → Quantower bridge</span></div>
+        </div>
+        <div style="padding:10px 14px;"><div style="font-family:var(--mono);font-size:11px;color:var(--text-muted);text-align:center;background:var(--bg3);border-radius:5px;padding:6px 8px;border:1px solid var(--border);">🔒 <span class="it-content">In arrivo</span><span class="en-content">Coming soon</span></div></div>
+      </div>
+
+      <!-- BOTTOM-LEFT: QUANTOWER BRIDGE (sotto Bot Algo) -->
+      <div onclick="openDocZoom('⚡','Quantower Bridge','Guida configurazione broker e ordini live 24/7')" style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .25s,box-shadow .25s,transform .2s;" onmouseenter="this.style.borderColor='rgba(200,148,10,.9)';this.style.boxShadow='0 0 28px rgba(200,148,10,.4)';this.style.transform='translateY(-3px)'" onmouseleave="this.style.borderColor='var(--border)';this.style.boxShadow='';this.style.transform='translateY(0)'">
+        <div style="background:rgba(0,230,118,0.07);border-bottom:1px solid var(--border);padding:34px 12px;display:flex;align-items:center;justify-content:center;font-size:60px;">⚡</div>
+        <div style="padding:12px 14px;text-align:center;flex:1;">
+          <div style="font-family:var(--mono);font-size:13px;color:var(--gold);font-weight:700;margin-bottom:5px;">Quantower Bridge</div>
+          <div style="font-size:12px;color:var(--text-muted);line-height:1.5;"><span class="it-content">Guida configurazione broker e ordini live</span><span class="en-content">Broker configuration and live order guide</span></div>
+        </div>
+        <div style="padding:10px 14px;"><div style="font-family:var(--mono);font-size:11px;color:var(--text-muted);text-align:center;background:var(--bg3);border-radius:5px;padding:6px 8px;border:1px solid var(--border);">🔒 <span class="it-content">In arrivo</span><span class="en-content">Coming soon</span></div></div>
+      </div>
+
+      <!-- BOTTOM-RIGHT: SETUP MANAGER AI (sotto Python) -->
+      <div onclick="openDocZoom('🤖','Setup Manager AI','Ottimizzazione giornaliera parametri bot con Claude AI')" style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .25s,box-shadow .25s,transform .2s;" onmouseenter="this.style.borderColor='rgba(200,148,10,.9)';this.style.boxShadow='0 0 28px rgba(200,148,10,.4)';this.style.transform='translateY(-3px)'" onmouseleave="this.style.borderColor='var(--border)';this.style.boxShadow='';this.style.transform='translateY(0)'">
+        <div style="background:rgba(171,71,188,0.07);border-bottom:1px solid var(--border);padding:34px 12px;display:flex;align-items:center;justify-content:center;font-size:60px;">🤖</div>
+        <div style="padding:12px 14px;text-align:center;flex:1;">
+          <div style="font-family:var(--mono);font-size:13px;color:var(--gold);font-weight:700;margin-bottom:5px;">Setup Manager AI</div>
+          <div style="font-size:12px;color:var(--text-muted);line-height:1.5;"><span class="it-content">Ottimizzazione giornaliera con Claude AI</span><span class="en-content">Daily optimization with Claude AI</span></div>
+        </div>
+        <div style="padding:10px 14px;"><div style="font-family:var(--mono);font-size:11px;color:var(--text-muted);text-align:center;background:var(--bg3);border-radius:5px;padding:6px 8px;border:1px solid var(--border);">🔒 <span class="it-content">In arrivo</span><span class="en-content">Coming soon</span></div></div>
+      </div>
+
+    </div>
+
+    <!-- NOTA ABBONATI — illuminata su hover -->
+    <div id="doc-abbonati-bar" style="background:rgba(200,148,10,.06);border:1px solid rgba(200,148,10,.3);border-radius:10px;padding:18px 24px;font-family:var(--mono);font-size:12px;color:var(--text-muted);line-height:1.7;text-align:center;cursor:default;transition:border-color .3s,box-shadow .3s,background .3s,color .3s;" onmouseenter="this.style.borderColor='rgba(200,148,10,.95)';this.style.boxShadow='0 0 32px rgba(200,148,10,.45)';this.style.background='rgba(200,148,10,.14)';this.style.color='#ffd700'" onmouseleave="this.style.borderColor='rgba(200,148,10,.3)';this.style.boxShadow='';this.style.background='rgba(200,148,10,.06)';this.style.color='var(--text-muted)'">
+      🔐 <span class="it-content"><strong style="color:var(--gold);">I documenti sono disponibili agli abbonati attivi.</strong><br>Accedi all'area riservata dopo l'abbonamento per scaricare PDF e guide.</span><span class="en-content"><strong style="color:var(--gold);">Documents are available to active subscribers.</strong><br>Access the members area after subscribing to download PDFs and guides.</span>
+    </div>
+  </div>
+</div>
+
+<!-- DOC ZOOM OVERLAY -->
+<div id="doc-zoom-overlay" style="display:none;position:fixed;inset:0;z-index:9999999;background:rgba(0,0,0,0.96);align-items:center;justify-content:center;flex-direction:column;" onclick="closeDocZoom()">
+  <button onclick="closeDocZoom()" style="position:absolute;top:18px;right:18px;background:rgba(255,68,68,.18);border:2px solid rgba(255,68,68,.55);color:#ff6666;font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;cursor:pointer;font-family:var(--mono);letter-spacing:.12em;transition:all .2s;display:flex;align-items:center;gap:8px;" onmouseenter="this.style.background='rgba(255,68,68,.4)';this.style.borderColor='rgba(255,68,68,.9)';this.style.color='#fff'" onmouseleave="this.style.background='rgba(255,68,68,.18)';this.style.borderColor='rgba(255,68,68,.55)';this.style.color='#ff6666'">✕ &nbsp;<span class="it-content">CHIUDI</span><span class="en-content">CLOSE</span></button>
+  <div style="text-align:center;max-width:480px;padding:40px;">
+    <div id="doc-zoom-icon" style="font-size:96px;margin-bottom:24px;filter:drop-shadow(0 0 30px rgba(200,148,10,0.5));"></div>
+    <div id="doc-zoom-title" style="font-family:var(--display);font-size:32px;color:var(--gold);letter-spacing:4px;margin-bottom:16px;"></div>
+    <div id="doc-zoom-desc" style="font-size:15px;color:var(--text-muted);line-height:1.7;margin-bottom:28px;font-family:'DM Sans',sans-serif;"></div>
+    <div style="background:rgba(200,148,10,.08);border:1px solid rgba(200,148,10,.35);border-radius:10px;padding:18px 24px;font-family:var(--mono);font-size:13px;color:var(--gold);">
+      🔒 <span class="it-content">Documento in preparazione — disponibile agli abbonati attivi</span><span class="en-content">Document in preparation — available to active subscribers</span>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
