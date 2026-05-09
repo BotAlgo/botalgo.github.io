@@ -215,7 +215,7 @@ nav a.nav-active {
   font-size: 14px;
   color: var(--green);
   letter-spacing: .18em;
-  margin: 1rem 0 3rem;
+  margin: 0.5rem 0 0.9rem;
   animation: fadeUp .6s .2s ease both;
   display: inline-block;
   border: 1.5px solid rgba(0,230,118,0.55);
@@ -799,17 +799,15 @@ footer strong { color: var(--green); }
   bottom: 2rem; right: 2rem;
   background: linear-gradient(145deg, #00f080, #00c060);
   color: #FFFFFF;
-  width: 42px; height: 42px;
+  width: 46px; height: 46px;
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 20px;
-  font-weight: 900;
   cursor: pointer;
   opacity: 0;
   transition: opacity .3s, transform .2s, box-shadow .2s;
   z-index: 200;
   text-decoration: none;
-  text-shadow: 0 2px 3px rgba(0,0,0,0.45), 0 1px 0 rgba(0,0,0,0.3);
+  filter: drop-shadow(0 3px 5px rgba(0,0,0,0.4));
   box-shadow: 0 4px 10px rgba(0,0,0,0.35), 0 2px 0 rgba(0,180,80,0.5), inset 0 1px 0 rgba(255,255,255,0.25);
 }
 .scroll-top:hover {
@@ -1696,11 +1694,11 @@ body.en div.en-content { display: block; }
     <span class="nav-logo">BOT ALGO &nbsp;▾</span>
     <div class="nav-dropdown-menu">
       <div class="nav-dropdown-menu-inner">
-        <a href="#pipeline"   class="nav-dropdown-item" onclick="scrollToEl('pipeline');return false;"><span class="it-content">📊 &nbsp;La Pipeline Completa</span><span class="en-content">📊 &nbsp;The Full Pipeline</span></a>
-        <a href="#prodotti" class="nav-dropdown-item" onclick="scrollToEl('prodotti');return false;"><span class="it-content">🛠️ &nbsp;4 Strumenti Professionali</span><span class="en-content">🛠️ &nbsp;4 Professional Tools</span></a>
-        <a href="#futures"    class="nav-dropdown-item" onclick="scrollToEl('futures');return false;"><span class="it-content">⚡ &nbsp;8 Futures Inclusi</span><span class="en-content">⚡ &nbsp;8 Futures Included</span></a>
-        <a href="#prezzi" class="nav-dropdown-item" onclick="scrollToEl('prezzi');return false;"><span class="it-content">💎 &nbsp;Scegli il Tuo Piano</span><span class="en-content">💎 &nbsp;Choose Your Plan</span></a>
-        <a href="#supporto"   class="nav-dropdown-item" onclick="scrollToEl('supporto');return false;"><span class="it-content">🎧 &nbsp;Supporto Illimitato</span><span class="en-content">🎧 &nbsp;Unlimited Support</span></a>
+        <a href="#pipeline"   class="nav-dropdown-item" style="padding:22px 18px;" onclick="scrollToEl('pipeline');return false;"><span class="it-content">📊 &nbsp;La Pipeline Completa</span><span class="en-content">📊 &nbsp;The Full Pipeline</span></a>
+        <a href="#prodotti" class="nav-dropdown-item" style="padding:22px 18px;" onclick="scrollToEl('prodotti');return false;"><span class="it-content">🛠️ &nbsp;4 Strumenti Professionali</span><span class="en-content">🛠️ &nbsp;4 Professional Tools</span></a>
+        <a href="#futures"    class="nav-dropdown-item" style="padding:22px 18px;" onclick="scrollToEl('futures');return false;"><span class="it-content">⚡ &nbsp;8 Futures Inclusi</span><span class="en-content">⚡ &nbsp;8 Futures Included</span></a>
+        <a href="#prezzi" class="nav-dropdown-item" style="padding:22px 18px;" onclick="scrollToEl('prezzi');return false;"><span class="it-content">💎 &nbsp;Scegli il Tuo Piano</span><span class="en-content">💎 &nbsp;Choose Your Plan</span></a>
+        <a href="#supporto"   class="nav-dropdown-item" style="padding:22px 18px;" onclick="scrollToEl('supporto');return false;"><span class="it-content">🎧 &nbsp;Supporto Illimitato</span><span class="en-content">🎧 &nbsp;Unlimited Support</span></a>
       </div>
     </div>
   </div>
@@ -1708,15 +1706,15 @@ body.en div.en-content { display: block; }
     <span class="nav-logo" style="cursor:pointer;letter-spacing:2px;font-size:17px;" onmouseenter="this.style.borderColor='rgba(200,148,10,.85)';this.style.background='rgba(200,148,10,.14)';this.style.boxShadow='0 0 20px rgba(255,215,0,.25)';this.style.textShadow='0 0 18px rgba(255,215,0,.9)'" onmouseleave="this.style.borderColor='rgba(200,148,10,.35)';this.style.background='rgba(200,148,10,.05)';this.style.boxShadow='';this.style.textShadow='0 0 12px rgba(200,148,10,0.6)'"><span class="it-content">🎬 GALLERIA ▾</span><span class="en-content">🎬 GALLERY ▾</span></span>
     <div class="nav-dropdown-menu">
       <div class="nav-dropdown-menu-inner">
-        <a href="#" class="nav-dropdown-item" onclick="openGallery();return false;" style="display:flex;align-items:center;gap:10px;">
+        <a href="#" class="nav-dropdown-item" onclick="openGallery();return false;" style="display:flex;align-items:center;gap:10px;padding:22px 18px;">
           <span style="font-size:16px;">📷</span>
           <span><span class="it-content" style="font-weight:700;">FOTO</span><span class="en-content" style="font-weight:700;">PHOTOS</span><br><span style="font-size:10px;color:var(--text-muted);font-weight:400;"><span class="it-content">4 Strumenti Professionali</span><span class="en-content">4 Professional Tools</span></span></span>
         </a>
-        <a href="#" class="nav-dropdown-item" onclick="openVideoGallery();return false;" style="display:flex;align-items:center;gap:10px;">
+        <a href="#" class="nav-dropdown-item" onclick="openVideoGallery();return false;" style="display:flex;align-items:center;gap:10px;padding:22px 18px;">
           <span style="font-size:16px;">🎥</span>
           <span><span class="it-content" style="font-weight:700;">VIDEO</span><span class="en-content" style="font-weight:700;">VIDEOS</span><br><span style="font-size:10px;color:var(--text-muted);font-weight:400;"><span class="it-content">Demo · Tutorial · Funzioni</span><span class="en-content">Demo · Tutorial · Features</span></span></span>
         </a>
-        <a href="#" class="nav-dropdown-item" onclick="openDocGallery();return false;" style="display:flex;align-items:center;gap:10px;">
+        <a href="#" class="nav-dropdown-item" onclick="openDocGallery();return false;" style="display:flex;align-items:center;gap:10px;padding:22px 18px;">
           <span style="font-size:16px;">📄</span>
           <span><span class="it-content" style="font-weight:700;">DOCUMENTI</span><span class="en-content" style="font-weight:700;">DOCUMENTS</span><br><span style="font-size:10px;color:var(--text-muted);font-weight:400;"><span class="it-content">PDF · Guide · Manuali</span><span class="en-content">PDFs · Guides · Manuals</span></span></span>
         </a>
@@ -1790,7 +1788,7 @@ body.en div.en-content { display: block; }
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <!-- FOTO PROFILO -->
-  <div style="margin-bottom:1rem;position:relative;z-index:10;">
+  <div style="margin-bottom:1rem;margin-top:2.4rem;position:relative;z-index:10;">
     <img src="BOT_ALGO.png" alt="Bot Algo" style="width:250px;height:250px;border-radius:50%;object-fit:cover;object-position:center center;border:2px solid rgba(200,148,10,.7);box-shadow:0 0 28px rgba(200,148,10,.5),0 0 60px rgba(200,148,10,.2);display:block;margin:0 auto 32px;cursor:pointer;transition:box-shadow .3s ease, border-color .3s ease, transform .3s ease;" onmouseenter="playLogoHoverSound();this.style.boxShadow='0 0 50px rgba(200,148,10,.9),0 0 100px rgba(200,148,10,.5),0 0 150px rgba(200,148,10,.2)';this.style.borderColor='rgba(255,215,0,.95)';this.style.transform='scale(1.06)'" onmouseleave="this.style.boxShadow='0 0 28px rgba(200,148,10,.5),0 0 60px rgba(200,148,10,.2)';this.style.borderColor='rgba(200,148,10,.7)';this.style.transform='scale(1)'">
   </div>
   <div class="hero-title" style="margin-bottom:1.5rem;text-shadow:0 0 60px rgba(200,148,10,0.5),0 0 120px rgba(200,148,10,0.2);"><span style="color:#c8940a">BOT</span><span style="color:#c8940a"> ALGO</span></div>
@@ -1803,7 +1801,7 @@ body.en div.en-content { display: block; }
       <span class="it-content">🤖 &nbsp;ATTIVA IL BOT</span><span class="en-content">🤖 &nbsp;ACTIVATE BOT</span>
     </button>
   </div>
-  <div class="hero-badges" style="margin-top:-0.6rem;">
+  <div class="hero-badges" style="margin-top:1.6rem;">
     <div class="badge"><span class="badge-num">2</span><span class="badge-label"><span class="it-content">📊 MODALITÀ</span><span class="en-content">📊 MODES</span></span></div>
     <div class="badge"><span class="badge-num">4</span><span class="badge-label"><span class="it-content">⚡ SEGNALI</span><span class="en-content">⚡ SIGNALS</span></span></div>
     <div class="badge"><span class="badge-num">4</span><span class="badge-label"><span class="it-content">🔍 FILTRI SMART</span><span class="en-content">🔍 SMART FILTERS</span></span></div>
@@ -2708,7 +2706,7 @@ body.en div.en-content { display: block; }
 </footer>
 
 <!-- SCROLL TOP -->
-<a href="#" class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0});return false;">↑</a>
+<a href="#" class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0});return false;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></a>
 
 <script>
 
@@ -3084,8 +3082,8 @@ function playCtaSound() {
     </div>
     <div class="cta-wrap">
       <a target="_blank" rel="noopener noreferrer" href="https://lemonsqueezy.com" onclick="playCtaSound()" class="btn-primary">ABBONATI SU LEMON SQUEEZY</a>
-      <a href="#prodotti" onclick="playCtaSound()" class="btn-secondary">SCOPRI DI PIÙ</a>
-      <a href="#prezzi" onclick="playCtaSound();setTimeout(function(){document.getElementById('prezzi').scrollIntoView({behavior:'smooth',block:'start'})},50);return false;" class="btn-secondary" style="border-color:var(--gold-light);color:var(--gold-light);background:rgba(200,148,10,0.08);" onmouseover="this.style.background='rgba(200,148,10,0.18)'" onmouseout="this.style.background='rgba(200,148,10,0.08)'">💎 SCEGLI IL TUO PIANO</a>
+      <a href="#prodotti" onclick="playCtaSound()" class="btn-secondary" style="background:rgba(0,212,255,0.18);border-color:rgba(0,212,255,0.8);color:var(--cyan);box-shadow:0 0 18px rgba(0,212,255,0.2);" onmouseover="this.style.background='rgba(0,212,255,0.32)';this.style.boxShadow='0 0 28px rgba(0,212,255,0.4)'" onmouseout="this.style.background='rgba(0,212,255,0.18)';this.style.boxShadow='0 0 18px rgba(0,212,255,0.2)'">SCOPRI DI PIÙ</a>
+      <a href="#prezzi" onclick="playCtaSound();setTimeout(function(){document.getElementById('prezzi').scrollIntoView({behavior:'smooth',block:'start'})},50);return false;" class="btn-primary" style="background:linear-gradient(135deg,#c8940a,#ffd700,#c8940a);" onmouseover="this.style.boxShadow='0 0 40px rgba(200,148,10,0.65)'" onmouseout="this.style.boxShadow='0 0 20px rgba(200,148,10,0.3)'">💎 SCEGLI IL TUO PIANO</a>
     </div>
   </div>
 
@@ -3106,8 +3104,8 @@ function playCtaSound() {
     </div>
     <div class="cta-wrap">
       <a target="_blank" rel="noopener noreferrer" href="https://lemonsqueezy.com" onclick="playCtaSound()" class="btn-primary">SUBSCRIBE ON LEMON SQUEEZY</a>
-      <a href="#prodotti" onclick="playCtaSound()" class="btn-secondary">LEARN MORE</a>
-      <a href="#prezzi" onclick="playCtaSound();setTimeout(function(){document.getElementById('prezzi').scrollIntoView({behavior:'smooth',block:'start'})},50);return false;" class="btn-secondary" style="border-color:var(--gold-light);color:var(--gold-light);background:rgba(200,148,10,0.08);" onmouseover="this.style.background='rgba(200,148,10,0.18)'" onmouseout="this.style.background='rgba(200,148,10,0.08)'">💎 CHOOSE YOUR PLAN</a>
+      <a href="#prodotti" onclick="playCtaSound()" class="btn-secondary" style="background:rgba(0,212,255,0.18);border-color:rgba(0,212,255,0.8);color:var(--cyan);box-shadow:0 0 18px rgba(0,212,255,0.2);" onmouseover="this.style.background='rgba(0,212,255,0.32)';this.style.boxShadow='0 0 28px rgba(0,212,255,0.4)'" onmouseout="this.style.background='rgba(0,212,255,0.18)';this.style.boxShadow='0 0 18px rgba(0,212,255,0.2)'">LEARN MORE</a>
+      <a href="#prezzi" onclick="playCtaSound();setTimeout(function(){document.getElementById('prezzi').scrollIntoView({behavior:'smooth',block:'start'})},50);return false;" class="btn-primary" style="background:linear-gradient(135deg,#c8940a,#ffd700,#c8940a);" onmouseover="this.style.boxShadow='0 0 40px rgba(200,148,10,0.65)'" onmouseout="this.style.boxShadow='0 0 20px rgba(200,148,10,0.3)'">💎 CHOOSE YOUR PLAN</a>
     </div>
   </div>
 
