@@ -1675,7 +1675,11 @@ body.en div.en-content { display: block; }
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-deep); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-#doc-pwd-input::-ms-reveal { filter: invert(60%) sepia(90%) saturate(400%) hue-rotate(5deg) brightness(1.2); width:20px; height:20px; }
+#doc-pwd-input { -webkit-text-security: disc; }
+#doc-pwd-input.pwd-visible { -webkit-text-security: none; }
+#doc-pwd-input::-ms-reveal,
+#doc-pwd-input::-ms-clear { display:none; }
+#doc-pwd-input { -webkit-text-security: disc; }
 
 /* GLOW LINE */
 .glow-line {
@@ -2725,6 +2729,16 @@ function closeVideoGallery() {
 var _docUnlocked = false;
 var _docPassword = 'BotAlgo2026';
 
+function openPythonDocs() {
+  playZoomOpenSound();
+  document.getElementById('python-docs-modal').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closePythonDocs() {
+  document.getElementById('python-docs-modal').style.display = 'none';
+  document.body.style.overflow = '';
+  playZoomCloseSound();
+}
 function openDocGallery() {
   if (_docUnlocked) {
     _showDocModal();
@@ -2733,12 +2747,29 @@ function openDocGallery() {
   // Mostra prompt password
   document.getElementById('doc-password-overlay').style.display = 'flex';
   document.body.style.overflow = 'hidden';
-  setTimeout(function(){ document.getElementById('doc-pwd-input').focus(); }, 100);
+  setTimeout(function(){ document.getElementById('doc-pwd-input').focus(); initPwdEye(); }, 100);
 }
 function _showDocModal() {
   document.getElementById('doc-gallery-modal').style.display = 'block';
   document.body.style.overflow = 'hidden';
   try { playNavSound(); } catch(e){}
+}
+var _pwdShown = false;
+var _svgOpen = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffa500" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>';
+var _svgClosed = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffa500" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
+function togglePwdEye() {
+  _pwdShown = !_pwdShown;
+  var inp = document.getElementById('doc-pwd-input');
+  if (_pwdShown) { inp.classList.add('pwd-visible'); }
+  else { inp.classList.remove('pwd-visible'); }
+  document.getElementById('pwd-eye-toggle').innerHTML = _pwdShown ? _svgOpen : _svgClosed;
+}
+function initPwdEye() {
+  _pwdShown = false;
+  var inp = document.getElementById('doc-pwd-input');
+  inp.classList.remove('pwd-visible');
+  inp.value = '';
+  document.getElementById('pwd-eye-toggle').innerHTML = _svgClosed;
 }
 function checkDocPassword() {
   var val = document.getElementById('doc-pwd-input').value.trim();
@@ -2854,7 +2885,7 @@ function closeZoom() {
   playZoomCloseSound();
 }
 document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeZoom(); closeGallery(); closeVideoGallery(); closeDocGallery(); closeDocZoom(); closeDocPasswordOverlay(); }
+  if (e.key === 'Escape') { closeZoom(); closeGallery(); closeVideoGallery(); closeDocGallery(); closeDocZoom(); closeDocPasswordOverlay(); closePythonDocs(); }
   if (e.key === 'Enter' && document.getElementById('doc-password-overlay').style.display === 'flex') { checkDocPassword(); }
 });
 
@@ -3796,6 +3827,44 @@ window.addEventListener('beforeinstallprompt', e => {
   if (btn) { btn.style.display = 'flex'; }
 });
 </script>
+<!-- PYTHON DOCS MODAL -->
+<div id="python-docs-modal" style="display:none;position:fixed;inset:0;z-index:999998;background:rgba(0,0,0,0.93);backdrop-filter:blur(8px);overflow-y:auto;padding:60px 20px 40px;" onclick="if(event.target===this)closePythonDocs();">
+  <button onclick="closePythonDocs()" style="position:fixed;top:18px;right:18px;background:rgba(255,68,68,.18);border:2px solid rgba(255,68,68,.55);color:#ff6666;font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;cursor:pointer;font-family:var(--mono);letter-spacing:.12em;z-index:100000;display:flex;align-items:center;gap:8px;transition:all .2s;" onmouseenter="this.style.background='rgba(255,68,68,.4)';this.style.color='#fff'" onmouseleave="this.style.background='rgba(255,68,68,.18)';this.style.color='#ff6666'">✕ &nbsp;<span class="it-content">CHIUDI</span><span class="en-content">CLOSE</span></button>
+  <div style="max-width:760px;margin:0 auto;text-align:center;">
+    <div style="font-family:var(--display);font-size:28px;color:var(--gold);letter-spacing:4px;margin-bottom:.4rem;">🐍 PYTHON BRIDGE</div>
+    <div style="font-family:var(--mono);font-size:12px;color:var(--text-muted);letter-spacing:.15em;margin-bottom:2rem;"><span class="it-content">Guide e Manuali</span><span class="en-content">Guides and Manuals</span></div>
+
+    <!-- GRID PDF -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:1.5rem;">
+
+      <!-- PDF 1: Guida ngrok -->
+      <div onclick="playZoomOpenSound();window.open('Docs/Guida all\'installazione di NGROK.pdf','_blank');" style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .25s,box-shadow .25s,transform .2s;" onmouseenter="this.style.borderColor='rgba(200,148,10,.9)';this.style.boxShadow='0 0 28px rgba(200,148,10,.4)';this.style.transform='translateY(-3px)'" onmouseleave="this.style.borderColor='var(--border)';this.style.boxShadow='';this.style.transform='translateY(0)'">
+        <div style="background:rgba(0,188,212,0.07);border-bottom:1px solid var(--border);padding:28px 12px;display:flex;align-items:center;justify-content:center;">
+          <svg width="56" height="70" viewBox="0 0 56 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="56" height="70" rx="6" fill="rgba(0,188,212,0.15)"/>
+            <rect x="1" y="1" width="54" height="68" rx="5" stroke="rgba(0,188,212,0.6)" stroke-width="1.5"/>
+            <path d="M14 10 L34 10 L44 20 L44 60 L14 60 Z" fill="rgba(0,212,255,0.12)" stroke="rgba(0,212,255,0.5)" stroke-width="1.2"/>
+            <path d="M34 10 L34 20 L44 20" fill="none" stroke="rgba(0,212,255,0.5)" stroke-width="1.2"/>
+            <text x="19" y="42" font-family="monospace" font-size="10" fill="#00d4ff" font-weight="bold">PDF</text>
+          </svg>
+        </div>
+        <div style="padding:10px 12px;text-align:center;flex:1;">
+          <div style="font-family:var(--mono);font-size:11px;color:var(--gold);font-weight:700;margin-bottom:4px;"><span class="it-content">Guida ngrok</span><span class="en-content">ngrok Guide</span></div>
+          <div style="font-size:10px;color:var(--text-muted);line-height:1.5;"><span class="it-content">Installazione e configurazione per ricevere i segnali da TradingView</span><span class="en-content">Installation and configuration to receive signals from TradingView</span></div>
+        </div>
+        <div style="padding:8px 12px;"><div style="font-family:var(--mono);font-size:10px;color:#00d4ff;font-weight:700;text-align:center;background:rgba(0,188,212,0.08);border-radius:5px;padding:5px 8px;border:1px solid rgba(0,188,212,0.3);">📄 <span class="it-content">APRI PDF</span><span class="en-content">OPEN PDF</span></div></div>
+      </div>
+
+      <!-- SLOT FUTURO -->
+      <div style="background:var(--card);border:1px dashed rgba(255,255,255,0.1);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 12px;opacity:0.4;">
+        <div style="font-size:36px;margin-bottom:8px;">➕</div>
+        <div style="font-family:var(--mono);font-size:10px;color:var(--text-muted);text-align:center;"><span class="it-content">Prossima guida<br>in arrivo</span><span class="en-content">Next guide<br>coming soon</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- DOC PASSWORD OVERLAY -->
 <div id="doc-password-overlay" style="display:none;position:fixed;inset:0;z-index:999999;background:rgba(0,0,0,0.93);backdrop-filter:blur(10px);align-items:center;justify-content:center;" onclick="if(event.target===this)closeDocPasswordOverlay();">
   <div style="background:var(--card);border:1px solid rgba(200,148,10,0.5);border-radius:14px;padding:36px 40px;max-width:440px;width:92%;text-align:center;box-shadow:0 0 60px rgba(200,148,10,0.2);">
@@ -3814,10 +3883,14 @@ window.addEventListener('beforeinstallprompt', e => {
     </div>
 
     <!-- Input password -->
-    <input id="doc-pwd-input" type="password" placeholder="Password..."
-      style="width:100%;box-sizing:border-box;background:rgba(255,255,255,0.05);border:1.5px solid rgba(200,148,10,0.5);border-radius:8px;color:#fff;font-family:var(--mono);font-size:14px;padding:12px 16px;outline:none;margin-bottom:8px;text-align:center;letter-spacing:0.15em;transition:border-color .2s;"
-      onfocus="this.style.borderColor='rgba(200,148,10,0.9)'" onblur="this.style.borderColor='rgba(200,148,10,0.5)'" />
-
+    <div style="position:relative;margin-bottom:8px;">
+      <input id="doc-pwd-input" type="text" autocomplete="off" placeholder="Password..."
+        style="width:100%;box-sizing:border-box;background:rgba(255,255,255,0.05);border:1.5px solid rgba(200,148,10,0.5);border-radius:8px;color:#fff;font-family:var(--mono);font-size:14px;padding:12px 44px 12px 16px;outline:none;text-align:center;letter-spacing:0.15em;transition:border-color .2s;"
+        onfocus="this.style.borderColor='rgba(200,148,10,0.9)'" onblur="this.style.borderColor='rgba(200,148,10,0.5)'" />
+      <span id="pwd-eye-toggle" onclick="togglePwdEye()"
+        style="position:absolute;right:10px;top:50%;transform:translateY(-50%);cursor:pointer;display:flex;align-items:center;opacity:0.9;"
+        onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'"></span>
+    </div>
     <!-- Errore -->
     <div id="doc-pwd-error" style="display:none;color:#ff5555;font-family:var(--mono);font-size:11px;margin-bottom:10px;line-height:1.8;">
       <span class="it-content">❌ Password errata.<br>Controlla l'email di conferma abbonamento.</span>
@@ -3872,13 +3945,13 @@ window.addEventListener('beforeinstallprompt', e => {
       </div>
 
       <!-- TOP-RIGHT: PYTHON BRIDGE -->
-      <div onclick="openDocZoom('🐍','Python Bridge','Setup e configurazione del bridge TradingView → Quantower')" style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .25s,box-shadow .25s,transform .2s;" onmouseenter="this.style.borderColor='rgba(200,148,10,.9)';this.style.boxShadow='0 0 28px rgba(200,148,10,.4)';this.style.transform='translateY(-3px)'" onmouseleave="this.style.borderColor='var(--border)';this.style.boxShadow='';this.style.transform='translateY(0)'">
+      <div onclick="openPythonDocs()" style="background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:border-color .25s,box-shadow .25s,transform .2s;" onmouseenter="this.style.borderColor='rgba(200,148,10,.9)';this.style.boxShadow='0 0 28px rgba(200,148,10,.4)';this.style.transform='translateY(-3px)'" onmouseleave="this.style.borderColor='var(--border)';this.style.boxShadow='';this.style.transform='translateY(0)'">
         <div style="background:rgba(0,188,212,0.07);border-bottom:1px solid var(--border);padding:34px 12px;display:flex;align-items:center;justify-content:center;font-size:60px;">🐍</div>
         <div style="padding:12px 14px;text-align:center;flex:1;">
           <div style="font-family:var(--mono);font-size:13px;color:var(--gold);font-weight:700;margin-bottom:5px;">Python Bridge</div>
-          <div style="font-size:12px;color:var(--text-muted);line-height:1.5;"><span class="it-content">Setup e configurazione del bridge TV → Quantower</span><span class="en-content">Setup and configuration of TV → Quantower bridge</span></div>
+          <div style="font-size:12px;color:var(--text-muted);line-height:1.5;"><span class="it-content">Guide e manuali per installazione, configurazione e funzioni</span><span class="en-content">Guides and manuals for installation, configuration and functions</span></div>
         </div>
-        <div style="padding:10px 14px;"><div style="font-family:var(--mono);font-size:11px;color:var(--text-muted);text-align:center;background:var(--bg3);border-radius:5px;padding:6px 8px;border:1px solid var(--border);">🔒 <span class="it-content">In arrivo</span><span class="en-content">Coming soon</span></div></div>
+        <div style="padding:10px 14px;"><div style="font-family:var(--mono);font-size:11px;color:var(--cyan);font-weight:700;text-align:center;background:rgba(0,188,212,0.08);border-radius:5px;padding:6px 8px;border:1px solid rgba(0,188,212,0.3);">📂 <span class="it-content">VEDI DOCUMENTI</span><span class="en-content">VIEW DOCUMENTS</span></div></div>
       </div>
 
       <!-- BOTTOM-LEFT: QUANTOWER BRIDGE (sotto Bot Algo) -->
