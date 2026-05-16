@@ -431,6 +431,9 @@ img {
   font-size: 11px;
   color: var(--cyan);
   margin-bottom: .5rem;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .signal-desc { font-size: 13px; color: var(--text); line-height: 1.5; }
 
@@ -1958,7 +1961,7 @@ body.en div.en-content { display: block; }
         </div>
       </div>
       <div class="signal-body">
-        <div class="signal-params">Start: 0.02 · Increment: 0.02 · Max: 0.2</div>
+        <div class="signal-params" style="white-space:nowrap;font-size:10px;overflow:hidden;text-overflow:ellipsis;">Start: 0.02 · Increment: 0.02 · Max: 0.2</div>
         <div class="signal-desc"><span class="it-content">Inversione di tendenza basata su punti parabolici. BUY quando il prezzo supera il punto SaR, SELL quando lo buca.</span><span class="en-content">Trend reversal based on parabolic points. BUY when price breaks above the SaR point, SELL when it breaks below.</span></div>
       </div>
     </div>
@@ -3780,6 +3783,11 @@ document.addEventListener('DOMContentLoaded', function() {
       <span class="it-content">📹 Guarda i video nella sezione <strong style="color:var(--gold);">VIDEO</strong> — demo live · tutorial · strategie operative</span>
       <span class="en-content">📹 Watch videos in the <strong style="color:var(--gold);">VIDEO</strong> section — live demo · tutorial · trading strategies</span>
     </div>
+    <!-- FOOTER link a DOCUMENTI -->
+    <div style="text-align:center;margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--text-muted);letter-spacing:.1em;padding:14px 20px;background:rgba(200,148,10,0.05);border:1px solid rgba(200,148,10,0.3);border-radius:10px;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s;" onclick="playZoomOpenSound();document.getElementById('gallery-modal').style.display='none';openDocGallery();" onmouseover="this.style.background='rgba(200,148,10,0.13)';this.style.borderColor='rgba(200,148,10,0.7)';this.style.boxShadow='0 0 18px rgba(200,148,10,0.3)'" onmouseout="this.style.background='rgba(200,148,10,0.05)';this.style.borderColor='rgba(200,148,10,0.3)';this.style.boxShadow=''">
+      <span class="it-content">📄 Consulta i documenti nella sezione <strong style="color:var(--gold);">DOCUMENTI</strong> — PDF · Guide · Manuali</span>
+      <span class="en-content">📄 Browse the <strong style="color:var(--gold);">DOCUMENTS</strong> section — PDFs · Guides · Manuals</span>
+    </div>
   </div>
 </div>
 
@@ -3810,6 +3818,11 @@ document.addEventListener('DOMContentLoaded', function() {
     <div style="text-align:center;margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--text-muted);letter-spacing:.1em;padding:14px 20px;background:rgba(200,148,10,0.05);border:1px solid rgba(200,148,10,0.3);border-radius:10px;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s;" onclick="playZoomOpenSound();document.getElementById('gallery-modal').style.display='block';document.getElementById('video-gallery-modal').style.display='none';" onmouseover="this.style.background='rgba(200,148,10,0.13)';this.style.borderColor='rgba(200,148,10,0.7)';this.style.boxShadow='0 0 18px rgba(200,148,10,0.3)'" onmouseout="this.style.background='rgba(200,148,10,0.05)';this.style.borderColor='rgba(200,148,10,0.3)';this.style.boxShadow=''">
       <span class="it-content">📷 Guarda le foto nella sezione <strong style="color:var(--gold);">FOTO</strong> — screenshot · interfaccia · segnali live</span>
       <span class="en-content">📷 Browse photos in the <strong style="color:var(--gold);">PHOTOS</strong> section — screenshots · interface · live signals</span>
+    </div>
+    <!-- FOOTER link a DOCUMENTI -->
+    <div style="text-align:center;margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--text-muted);letter-spacing:.1em;padding:14px 20px;background:rgba(200,148,10,0.05);border:1px solid rgba(200,148,10,0.3);border-radius:10px;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s;" onclick="playZoomOpenSound();document.getElementById('video-gallery-modal').style.display='none';openDocGallery();" onmouseover="this.style.background='rgba(200,148,10,0.13)';this.style.borderColor='rgba(200,148,10,0.7)';this.style.boxShadow='0 0 18px rgba(200,148,10,0.3)'" onmouseout="this.style.background='rgba(200,148,10,0.05)';this.style.borderColor='rgba(200,148,10,0.3)';this.style.boxShadow=''">
+      <span class="it-content">📄 Consulta i documenti nella sezione <strong style="color:var(--gold);">DOCUMENTI</strong> — PDF · Guide · Manuali</span>
+      <span class="en-content">📄 Browse the <strong style="color:var(--gold);">DOCUMENTS</strong> section — PDFs · Guides · Manuals</span>
     </div>
   </div>
 </div>
