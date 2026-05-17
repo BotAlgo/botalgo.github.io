@@ -1693,6 +1693,26 @@ body.en div.en-content { display: block; }
 }
 
 </style>
+  <style>
+    /* Blocca selezione testo */
+    * { -webkit-user-select: none !important; -moz-user-select: none !important; -ms-user-select: none !important; user-select: none !important; }
+    /* Blocca drag immagini */
+    img { -webkit-user-drag: none !important; user-drag: none !important; }
+    /* Ripristina pointer-events su elementi interattivi */
+    a, button, input, select, textarea, [onclick], label { pointer-events: auto !important; }
+  </style>
+  <script>
+    // Blocca tasto destro
+    document.addEventListener('contextmenu', function(e){ e.preventDefault(); return false; });
+    // Blocca Ctrl+C, Ctrl+U, Ctrl+S, Ctrl+A
+    document.addEventListener('keydown', function(e){
+      if(e.ctrlKey && (e.key==='c'||e.key==='C'||e.key==='u'||e.key==='U'||e.key==='s'||e.key==='S'||e.key==='a'||e.key==='A')){
+        e.preventDefault(); return false;
+      }
+    });
+    // Blocca drag immagini
+    document.addEventListener('dragstart', function(e){ e.preventDefault(); return false; });
+  </script>
 </head>
 <body>
 
