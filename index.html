@@ -1857,7 +1857,7 @@ body.en div.en-content { display: block; }
   <div class="flow-steps">
     <div class="flow-step"><span class="step-num">1</span><div class="step-icon">📊</div><div class="step-name"><span class="it-content">MODALITÀ</span><span class="en-content">MODES</span></div><div class="step-detail"><span class="it-content">Scalping · Day Trading</span><span class="en-content">Scalping · Day Trading</span></div></div>
     <div class="flow-step"><span class="step-num">2</span><div class="step-icon">⚡</div><div class="step-name"><span class="it-content">4 SEGNALI</span><span class="en-content">4 SIGNALS</span></div><div class="step-detail"><span class="it-content">ST · EMA · PSaR · BRK</span><span class="en-content">ST · EMA · PSaR · BRK</span></div></div>
-    <div class="flow-step"><span class="step-num">3</span><div class="step-icon">🔍</div><div class="step-name"><span class="it-content">FILTRI</span><span class="en-content">FILTERS</span></div><div class="step-detail"><span class="it-content">Nessuno · SMA · ST · Entrambi</span><span class="en-content">None · SMA · ST · Both</span></div></div>
+    <div class="flow-step"><span class="step-num">3</span><div class="step-icon">🔍</div><div class="step-name"><span class="it-content">FILTRI</span><span class="en-content">FILTERS</span></div><div class="step-detail"><span class="it-content">Nessuno · SMA · ST · Entrambi · Scanner</span><span class="en-content">None · SMA · ST · Both · Scanner</span></div></div>
     <div class="flow-step"><span class="step-num">4</span><div class="step-icon">⏰</div><div class="step-name"><span class="it-content">FASCIA ORARIA</span><span class="en-content">TIME WINDOW</span></div><div class="step-detail"><span class="it-content">Orario di operatività</span><span class="en-content">Trading hours</span></div></div>
     <div class="flow-step"><span class="step-num">5</span><div class="step-icon">🚦</div><div class="step-name"><span class="it-content">SCELTA SEGNALI</span><span class="en-content">SIGNAL CHOICE</span></div><div class="step-detail"><span class="it-content">BUY / SELL / BUY&amp;SELL</span><span class="en-content">BUY / SELL / BUY&amp;SELL</span></div></div>
     <div class="flow-step"><span class="step-num">6</span><div class="step-icon">📥</div><div class="step-name"><span class="it-content">APERTURA TRADE</span><span class="en-content">TRADE OPEN</span></div><div class="step-detail"><span class="it-content">Prezzo · Qty · Mediazione</span><span class="en-content">Price · Qty · Averaging</span></div></div>
@@ -2075,6 +2075,15 @@ body.en div.en-content { display: block; }
       <div class="filter-rule"><span class="arrow-up">▲</span> <span class="it-content">BUY: ST cambia → rialzista con prezzo &gt; SMA</span><span class="en-content">BUY: ST changes → bullish with price &gt; SMA</span></div>
       <div class="filter-rule"><span class="arrow-dn">▼</span> <span class="it-content">SELL: ST cambia → ribassista con prezzo &lt; SMA</span><span class="en-content">SELL: ST changes → bearish with price &lt; SMA</span></div>
       <div class="filter-note" style="color:#88cce4;background:rgba(66,165,245,.06);border:1px solid rgba(66,165,245,.2);border-radius:5px;padding:.45rem .7rem;"><span class="it-content">Attende il cambio di stato del SuperTrend.<br>Meno segnali, massima affidabilità.</span><span class="en-content">Waits for SuperTrend state change.<br>Fewer signals, maximum reliability.</span></div>
+    </div>
+
+    <!-- 5 - SCANNER STRUTTURA MERCATO -->
+    <div class="filter-card" style="position:relative;background:#0d1a0d;border-color:#1a5c1a;grid-column:1/-1;">
+      <div style="position:absolute;top:.75rem;right:.85rem;font-family:var(--display);font-size:44px;color:rgba(0,255,0,0.12);line-height:1;letter-spacing:1px;">5</div>
+      <div class="filter-title" style="color:#00e676;"><span class="it-content">🏗️ SCANNER — STRUTTURA DI MERCATO (Direzione Decisa dal BOT)</span><span class="en-content">🏗️ SCANNER — MARKET STRUCTURE (Direction Decided by BOT)</span></div>
+      <div class="filter-rule"><span class="arrow-up">▲</span> <span class="it-content">BUY se struttura rialzista → Inversione o Continuazione al Rialzo</span><span class="en-content">BUY if bullish structure → Reversal or Continuation Upward</span></div>
+      <div class="filter-rule"><span class="arrow-dn">▼</span> <span class="it-content">SELL se struttura ribassista → Inversione o Continuazione al Ribasso</span><span class="en-content">SELL if bearish structure → Reversal or Continuation Downward</span></div>
+      <div class="filter-note" style="color:#80e8a0;background:rgba(0,230,118,.05);border:1px solid rgba(0,230,118,.2);border-radius:5px;padding:.45rem .7rem;"><span class="it-content">La direzione viene decisa automaticamente dallo Scanner.<br>Se attivo, i filtri manuali SMA 200 e SuperTrend vengono ignorati.<br>Quando il BOT è spento la tabella TREND mostra "BOT spento".</span><span class="en-content">Direction is decided automatically by the Scanner.<br>When active, manual filters SMA 200 and SuperTrend are ignored.<br>When the BOT is off the TREND table shows "BOT off".</span></div>
     </div>
 
   </div>
@@ -2637,6 +2646,10 @@ body.en div.en-content { display: block; }
     <div class="error-row">
       <span class="error-cause"><span class="it-content">⛔ Strumento non riconosciuto<br>dati non compilati o ticker non confermato</span><span class="en-content">⛔ Instrument not recognized<br>data not filled or ticker not confirmed</span></span>
       <span class="error-fix"><span class="it-content">✅ Compilare i parametri strumento e confermare il ticker</span><span class="en-content">✅ Fill in instrument parameters and confirm the ticker</span></span>
+    </div>
+    <div class="error-row">
+      <span class="error-cause"><span class="it-content">⛔ Scanner BOT attivo con Filtri manuali selezionati<br>SMA 200 o SuperTrend biffati insieme allo Scanner</span><span class="en-content">⛔ Scanner BOT active with Manual Filters selected<br>SMA 200 or SuperTrend checked together with Scanner</span></span>
+      <span class="error-fix"><span class="it-content">✅ Rimuovi biffatura da SMA 200 / SuperTrend</span><span class="en-content">✅ Uncheck SMA 200 / SuperTrend</span></span>
     </div>
   </div>
   </div>
