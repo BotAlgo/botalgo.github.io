@@ -458,6 +458,7 @@ img {
   margin-bottom: .75rem;
   padding-bottom: .5rem;
   border-bottom: 1px solid var(--border);
+  text-align: center;
 }
 .filter-rule {
   display: flex; align-items: center; gap: .5rem;
@@ -1868,7 +1869,7 @@ body.en div.en-content { display: block; }
     <div class="flow-step"><span class="step-num">11</span><div class="step-icon">🛠️</div><div class="step-name"><span class="it-content">STRUMENTI</span><span class="en-content">INSTRUMENTS</span></div><div class="step-detail"><span class="it-content">Futures USA · Europa · Fuso</span><span class="en-content">Futures USA · Europe · Timezone</span></div></div>
     <div class="flow-step"><span class="step-num">12</span><div class="step-icon">⚠️</div><div class="step-name"><span class="it-content">MESSAGGI</span><span class="en-content">MESSAGES</span></div><div class="step-detail"><span class="it-content">Avvisi · Correzioni</span><span class="en-content">Warnings · Corrections</span></div></div>
   </div>
-  <div class="flow-warning" style="text-align:center;font-size:13px;padding:1rem 1.5rem;">⚠️&nbsp;&nbsp;<strong style="color:var(--gold)"><span class="it-content">4 MODALITÀ DI FILTRO</span><span class="en-content">4 FILTER MODES</span></strong>&nbsp;<span class="it-content">(Passaggi 2 · 3 · 4): se non superati, il segnale viene scartato e nessun trade viene aperto</span><span class="en-content">(Steps 2 · 3 · 4): if not passed, the signal is discarded and no trade is opened</span></div>
+  <div class="flow-warning" style="text-align:center;font-size:13px;padding:1rem 1.5rem;">⚠️&nbsp;&nbsp;<strong style="color:var(--gold)"><span class="it-content">6 MODALITÀ DI FILTRO</span><span class="en-content">6 FILTER MODES</span></strong>&nbsp;<span class="it-content">(Passaggi 2 · 3 · 4): se non superati, il segnale viene scartato e nessun trade viene aperto</span><span class="en-content">(Steps 2 · 3 · 4): if not passed, the signal is discarded and no trade is opened</span></div>
 </section>
 
 <div class="section-sep"></div>
@@ -2026,12 +2027,13 @@ body.en div.en-content { display: block; }
   <div class="section-header">
     <div class="section-num">04</div>
     <div class="section-title" data-it="SISTEMA FILTRI" data-en="FILTER SYSTEM">SISTEMA FILTRI</div>
-    <div class="section-desc"><span class="it-content">SMA 200 + SuperTrend<br>riducono i segnali falsi ammettendo entry solo nella direzione del trend principale</span><span class="en-content">SMA 200 + SuperTrend<br>reduce false signals by allowing entries only in the main trend direction</span></div>
+    <div class="section-desc"><span class="it-content">Scanner · SMA 200 · SuperTrend<br>riducono i segnali falsi ammettendo entry solo nella direzione del trend principale</span><span class="en-content">Scanner · SMA 200 · SuperTrend<br>reduce false signals by allowing entries only in the main trend direction</span></div>
   </div>
   <div class="divider"></div>
 
   <!-- NESSUNO: opzione separata -->
-  <div style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:.7rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;transition:border-color .25s,box-shadow .25s;" onmouseenter="this.style.borderColor='rgba(255,255,255,0.45)';this.style.boxShadow='0 0 20px rgba(255,255,255,.07)'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.1)';this.style.boxShadow=''">
+  <div style="position:relative;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:.7rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;transition:border-color .25s,box-shadow .25s;" onmouseenter="this.style.borderColor='rgba(255,255,255,0.45)';this.style.boxShadow='0 0 20px rgba(255,255,255,.07)'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.1)';this.style.boxShadow=''">
+    <div style="position:absolute;top:1rem;right:1.5rem;font-family:var(--display);font-size:44px;color:rgba(255,255,255,0.35);line-height:1;">1</div>
     <span style="font-family:var(--mono);font-size:11px;color:var(--text-bright);letter-spacing:.15em;white-space:nowrap;"><span class="it-content">⭕ NESSUN FILTRO</span><span class="en-content">⭕ NO FILTER</span></span>
     <div style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:5px;padding:.4rem .8rem;font-size:12px;color:var(--text-bright);line-height:1.6;">
       <span class="it-content">Tutti i segnali vengono accettati senza condizioni.<br>Operatività massima, nessun filtro di trend.</span><span class="en-content">All signals are accepted without conditions.<br>Maximum activity, no trend filter.</span>
@@ -2041,36 +2043,36 @@ body.en div.en-content { display: block; }
   <!-- 4 FILTRI NUMERATI -->
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.5rem;">
 
-    <!-- 1 - SMA 200 -->
+    <!-- 2 - SMA 200 -->
     <div class="filter-card" style="position:relative;">
-      <div style="position:absolute;top:.75rem;right:.85rem;font-family:var(--display);font-size:44px;color:rgba(0,188,212,0.18);line-height:1;letter-spacing:1px;">1</div>
+      <div style="position:absolute;top:.75rem;right:.85rem;font-family:var(--display);font-size:44px;color:rgba(0,188,212,0.18);line-height:1;letter-spacing:1px;">2</div>
       <div class="filter-title"><span class="it-content">📈 SOLO SMA 200</span><span class="en-content">📈 SMA 200 ONLY</span></div>
       <div class="filter-rule"><span class="arrow-up">▲</span> <span class="it-content">BUY se prezzo &gt; SMA 200</span><span class="en-content">BUY if price &gt; SMA 200</span></div>
       <div class="filter-rule"><span class="arrow-dn">▼</span> <span class="it-content">SELL se prezzo &lt; SMA 200</span><span class="en-content">SELL if price &lt; SMA 200</span></div>
       <div class="filter-note" style="background:rgba(0,188,212,.05);border:1px solid rgba(0,188,212,.2);border-radius:5px;padding:.45rem .7rem;"><span class="it-content">Filtro semplice e rapido.<br>Nessuna attesa di conferma.</span><span class="en-content">Simple and fast filter.<br>No confirmation wait.</span></div>
     </div>
 
-    <!-- 2 - SUPERTREND -->
+    <!-- 3 - SUPERTREND -->
     <div class="filter-card" style="position:relative;">
-      <div style="position:absolute;top:.75rem;right:.85rem;font-family:var(--display);font-size:44px;color:rgba(0,188,212,0.18);line-height:1;letter-spacing:1px;">2</div>
+      <div style="position:absolute;top:.75rem;right:.85rem;font-family:var(--display);font-size:44px;color:rgba(0,188,212,0.18);line-height:1;letter-spacing:1px;">3</div>
       <div class="filter-title"><span class="it-content">🔁 SOLO SUPERTREND</span><span class="en-content">🔁 SUPERTREND ONLY</span></div>
       <div class="filter-rule"><span class="arrow-up">▲</span> <span class="it-content">BUY se SuperTrend rialzista</span><span class="en-content">BUY if SuperTrend bullish</span></div>
       <div class="filter-rule"><span class="arrow-dn">▼</span> <span class="it-content">SELL se SuperTrend ribassista</span><span class="en-content">SELL if SuperTrend bearish</span></div>
       <div class="filter-note" style="background:rgba(0,188,212,.05);border:1px solid rgba(0,188,212,.2);border-radius:5px;padding:.45rem .7rem;"><span class="it-content">Filtro dinamico basato su ATR.<br>Si adatta alla volatilità.</span><span class="en-content">Dynamic filter based on ATR.<br>Adapts to volatility.</span></div>
     </div>
 
-    <!-- 3 - ENTRAMBI FLESSIBILE -->
+    <!-- 4 - ENTRAMBI FLESSIBILE -->
     <div class="filter-card filter-gold" style="position:relative;background:#1a1700;border-color:#5a4800;">
-      <div style="position:absolute;top:.75rem;right:.85rem;font-family:var(--display);font-size:44px;color:rgba(200,148,10,0.22);line-height:1;letter-spacing:1px;">3</div>
+      <div style="position:absolute;top:.75rem;right:.85rem;font-family:var(--display);font-size:44px;color:rgba(200,148,10,0.22);line-height:1;letter-spacing:1px;">4</div>
       <div class="filter-title" style="color:var(--gold);"><span class="it-content">🟡 ENTRAMBI — FLESSIBILE</span><span class="en-content">🟡 BOTH — FLEXIBLE</span></div>
       <div class="filter-rule"><span class="arrow-up">▲</span> <span class="it-content">BUY se SMA + ST entrambi favorevoli</span><span class="en-content">BUY if SMA + ST both favorable</span></div>
       <div class="filter-rule"><span class="arrow-dn">▼</span> <span class="it-content">SELL se SMA + ST entrambi contrari</span><span class="en-content">SELL if SMA + ST both against</span></div>
       <div class="filter-note" style="color:#d4b020;background:rgba(200,148,10,.07);border:1px solid rgba(200,148,10,.25);border-radius:5px;padding:.45rem .7rem;"><span class="it-content">Controlla lo stato in qualsiasi momento.<br>Più reattivo, meno attesa.<br>Entry appena entrambi si allineano.</span><span class="en-content">Checks state at any time.<br>More reactive, less waiting.<br>Entry as soon as both align.</span></div>
     </div>
 
-    <!-- 4 - ENTRAMBI RIGIDA -->
+    <!-- 5 - ENTRAMBI RIGIDA -->
     <div class="filter-card filter-blue" style="position:relative;background:#001620;border-color:#004a6a;">
-      <div style="position:absolute;top:.75rem;right:.85rem;font-family:var(--display);font-size:44px;color:rgba(66,165,245,0.22);line-height:1;letter-spacing:1px;">4</div>
+      <div style="position:absolute;top:.75rem;right:.85rem;font-family:var(--display);font-size:44px;color:rgba(66,165,245,0.22);line-height:1;letter-spacing:1px;">5</div>
       <div class="filter-title" style="color:var(--blue);"><span class="it-content">🔵 ENTRAMBI — RIGIDA</span><span class="en-content">🔵 BOTH — STRICT</span></div>
       <div class="filter-rule"><span class="arrow-up">▲</span> <span class="it-content">BUY: ST cambia → rialzista con prezzo &gt; SMA</span><span class="en-content">BUY: ST changes → bullish with price &gt; SMA</span></div>
       <div class="filter-rule"><span class="arrow-dn">▼</span> <span class="it-content">SELL: ST cambia → ribassista con prezzo &lt; SMA</span><span class="en-content">SELL: ST changes → bearish with price &lt; SMA</span></div>
@@ -2079,7 +2081,7 @@ body.en div.en-content { display: block; }
 
     <!-- 5 - SCANNER STRUTTURA MERCATO -->
     <div class="filter-card" style="position:relative;background:#0d1a0d;border-color:#1a5c1a;grid-column:1/-1;">
-      <div style="position:absolute;top:.75rem;right:.85rem;font-family:var(--display);font-size:44px;color:rgba(0,255,0,0.12);line-height:1;letter-spacing:1px;">5</div>
+      <div style="position:absolute;top:.75rem;right:.85rem;font-family:var(--display);font-size:44px;color:rgba(0,255,0,0.12);line-height:1;letter-spacing:1px;">6</div>
       <div class="filter-title" style="color:#00e676;"><span class="it-content">🏗️ SCANNER — STRUTTURA DI MERCATO (Direzione Decisa dal BOT)</span><span class="en-content">🏗️ SCANNER — MARKET STRUCTURE (Direction Decided by BOT)</span></div>
       <div class="filter-rule"><span class="arrow-up">▲</span> <span class="it-content">BUY se struttura rialzista → Inversione o Continuazione al Rialzo</span><span class="en-content">BUY if bullish structure → Reversal or Continuation Upward</span></div>
       <div class="filter-rule"><span class="arrow-dn">▼</span> <span class="it-content">SELL se struttura ribassista → Inversione o Continuazione al Ribasso</span><span class="en-content">SELL if bearish structure → Reversal or Continuation Downward</span></div>
