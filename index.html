@@ -83,7 +83,7 @@ nav a {
   color: #ffffff;
   text-decoration: none;
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 12.5px;
   letter-spacing: 0.05em;
   padding: 4px 10px;
   height: 30px;
@@ -318,9 +318,6 @@ section {
   margin-right: auto;
   text-align: center;
 }
-.divider {
-  display: none;
-}
 
 /* ── FLOW STEPS ── */
 .flow-steps {
@@ -341,7 +338,7 @@ section {
 .flow-step:hover { background: var(--bg3); }
 .step-num {
   font-family: var(--display);
-  font-size: 48px;
+  font-size: 54px;
   color: var(--border);
   position: absolute;
   top: .5rem; right: 1rem;
@@ -855,14 +852,6 @@ footer strong { color: var(--green); }
 .pir-body { padding: 1rem; }
 .pir-entry { font-family: var(--mono); font-size: 11px; color: var(--cyan); margin-bottom: .25rem; }
 .pir-result { font-family: var(--mono); font-size: 12px; margin-top: .5rem; padding: .5rem; background: var(--bg3); border-radius: 4px; }
-
-.section-sep {
-  height: 1px;
-  background: var(--border);
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
 
 /* ── ANIMATED TICKER ── */
 .ticker-bar {
@@ -1648,14 +1637,6 @@ section {
   transform: translateY(-2px);
 }
 
-/* DIVIDER */
-.divider {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border), transparent);
-  margin: 0 auto;
-}
-
 /* FOOTER */
 footer {
   text-align: center;
@@ -1736,7 +1717,7 @@ body.en div.en-content { display: block; }
     </div>
   </div>
   <div class="nav-dropdown" style="margin-left:6px;">
-    <span class="nav-logo" style="cursor:pointer;letter-spacing:2px;font-size:17px;" onmouseenter="this.style.borderColor='rgba(200,148,10,.85)';this.style.background='rgba(200,148,10,.14)';this.style.boxShadow='0 0 20px rgba(255,215,0,.25)';this.style.textShadow='0 0 18px rgba(255,215,0,.9)'" onmouseleave="this.style.borderColor='rgba(200,148,10,.35)';this.style.background='rgba(200,148,10,.05)';this.style.boxShadow='';this.style.textShadow='0 0 12px rgba(200,148,10,0.6)'"><span class="it-content">🎬 GALLERIA ▾</span><span class="en-content">🎬 GALLERY ▾</span></span>
+    <span class="nav-logo" style="cursor:pointer;letter-spacing:3px;font-size:20px;" onmouseenter="this.style.borderColor='rgba(200,148,10,.85)';this.style.background='rgba(200,148,10,.14)';this.style.boxShadow='0 0 20px rgba(255,215,0,.25)';this.style.textShadow='0 0 18px rgba(255,215,0,.9)'" onmouseleave="this.style.borderColor='rgba(200,148,10,.35)';this.style.background='rgba(200,148,10,.05)';this.style.boxShadow='';this.style.textShadow='0 0 12px rgba(200,148,10,0.6)'"><span class="it-content">🎬 GALLERIA ▾</span><span class="en-content">🎬 GALLERY ▾</span></span>
     <div class="nav-dropdown-menu">
       <div class="nav-dropdown-menu-inner">
         <a href="#" class="nav-dropdown-item" onclick="openGallery();return false;" style="display:flex;align-items:center;gap:10px;padding:22px 18px;">
@@ -1772,15 +1753,18 @@ body.en div.en-content { display: block; }
     <a href="#messaggi"><span class="it-content">MESSAGGI</span><span class="en-content">MESSAGES</span></a>
   </div>
   <div id="clicca-btn">
-    <span style="color:#e8ff00;font-size:15px;line-height:1;">←</span>
-    <span style="font-family:var(--mono);font-size:10px;color:#e8ff00;letter-spacing:.08em;white-space:nowrap;">clicca x selezionare</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e8ff00" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+      <line x1="19" y1="12" x2="5" y2="12"></line>
+      <polyline points="11 6 5 12 11 18"></polyline>
+    </svg>
+    <span style="font-family:var(--mono);font-size:12.5px;color:#e8ff00;letter-spacing:.08em;white-space:nowrap;">clicca x selezionare</span>
   </div>
   <div style="display:flex;gap:5px;margin-left:8px;flex-shrink:0;">
     <button onclick="setLang('it')" id="nav-lang-it"
-      style="background:transparent;border:1px solid rgba(0,188,212,.7);color:#00d4ff;font-family:var(--mono);font-size:11px;padding:3px 10px;border-radius:4px;cursor:pointer;transition:all .2s;letter-spacing:.05em;"
+      style="background:transparent;border:1px solid rgba(0,188,212,.7);color:#00d4ff;font-family:var(--mono);font-size:12.5px;padding:3px 10px;border-radius:4px;cursor:pointer;transition:all .2s;letter-spacing:.05em;"
       onmouseenter="this.style.background='rgba(0,188,212,.15)'" onmouseleave="this.style.background='transparent'">🇮🇹 IT</button>
     <button onclick="setLang('en')" id="nav-lang-en"
-      style="background:transparent;border:1px solid rgba(0,188,212,.2);color:rgba(160,160,160,.7);font-family:var(--mono);font-size:11px;padding:3px 10px;border-radius:4px;cursor:pointer;transition:all .2s;letter-spacing:.05em;"
+      style="background:transparent;border:1px solid rgba(0,188,212,.2);color:rgba(160,160,160,.7);font-family:var(--mono);font-size:12.5px;padding:3px 10px;border-radius:4px;cursor:pointer;transition:all .2s;letter-spacing:.05em;"
       onmouseenter="this.style.background='rgba(0,188,212,.15)'" onmouseleave="this.style.background='transparent'">🇬🇧 EN</button>
   </div>
   <div id="pwa-install-btn" onclick="if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(()=>{deferredPrompt=null;document.getElementById('pwa-install-btn').style.display='none';});}"
@@ -1858,11 +1842,10 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="FLUSSO OPERATIVO" data-en="OPERATIONAL FLOW">FLUSSO OPERATIVO</div>
     <div class="section-desc"><span class="it-content">Come vengono elaborati i segnali<br>dall'indicatore all'alert</span><span class="en-content">How signals are processed<br>from indicator to alert</span></div>
   </div>
-  <div class="divider"></div>
   <div class="flow-steps">
     <div class="flow-step"><span class="step-num">1</span><div class="step-icon">📊</div><div class="step-name"><span class="it-content">MODALITÀ</span><span class="en-content">MODES</span></div><div class="step-detail"><span class="it-content">Scalping · Day Trading</span><span class="en-content">Scalping · Day Trading</span></div></div>
     <div class="flow-step"><span class="step-num">2</span><div class="step-icon">⚡</div><div class="step-name"><span class="it-content">4 SEGNALI</span><span class="en-content">4 SIGNALS</span></div><div class="step-detail"><span class="it-content">ST · EMA · PSaR · BRK</span><span class="en-content">ST · EMA · PSaR · BRK</span></div></div>
-    <div class="flow-step"><span class="step-num">3</span><div class="step-icon">🔍</div><div class="step-name"><span class="it-content">FILTRI</span><span class="en-content">FILTERS</span></div><div class="step-detail"><span class="it-content">Nessuno · SMA · ST · Entrambi · Scanner AI</span><span class="en-content">None · SMA · ST · Both · Scanner AI</span></div></div>
+    <div class="flow-step"><span class="step-num">3</span><div class="step-icon">🔍</div><div class="step-name"><span class="it-content">FILTRI</span><span class="en-content">FILTERS</span></div><div class="step-detail"><span class="it-content">Nessuno · Scanner AI · SMA · ST · Entrambi</span><span class="en-content">None · Scanner AI · SMA · ST · Both</span></div></div>
     <div class="flow-step"><span class="step-num">4</span><div class="step-icon">⏰</div><div class="step-name"><span class="it-content">FASCIA ORARIA</span><span class="en-content">TIME WINDOW</span></div><div class="step-detail"><span class="it-content">Orario di operatività</span><span class="en-content">Trading hours</span></div></div>
     <div class="flow-step"><span class="step-num">5</span><div class="step-icon">🚦</div><div class="step-name"><span class="it-content">SCELTA SEGNALI</span><span class="en-content">SIGNAL CHOICE</span></div><div class="step-detail"><span class="it-content">BUY / SELL / BUY&amp;SELL</span><span class="en-content">BUY / SELL / BUY&amp;SELL</span></div></div>
     <div class="flow-step"><span class="step-num">6</span><div class="step-icon">📥</div><div class="step-name"><span class="it-content">APERTURA TRADE</span><span class="en-content">TRADE OPEN</span></div><div class="step-detail"><span class="it-content">Prezzo · Qty · Mediazione</span><span class="en-content">Price · Qty · Averaging</span></div></div>
@@ -1876,7 +1859,6 @@ body.en div.en-content { display: block; }
   <div class="flow-warning" style="text-align:center;font-size:13px;padding:1rem 1.5rem;">⚠️&nbsp;&nbsp;<strong style="color:var(--gold)"><span class="it-content">6 MODALITÀ DI FILTRO</span><span class="en-content">6 FILTER MODES</span></strong>&nbsp;<span class="it-content">(Passaggi 2 · 3 · 4): se non superati, il segnale viene scartato e nessun trade viene aperto</span><span class="en-content">(Steps 2 · 3 · 4): if not passed, the signal is discarded and no trade is opened</span></div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- MODALITÀ -->
 <section id="modalita">
@@ -1885,7 +1867,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="SCALPING vs DAY TRADING" data-en="SCALPING vs DAY TRADING">SCALPING vs DAY TRADING</div>
     <div class="section-desc"><span class="it-content">La modalità cambia automaticamente in base ai parametri TP impostati</span><span class="en-content">The mode changes automatically based on the TP parameters set</span></div>
   </div>
-  <div class="divider"></div>
   <div class="trading-mode-grid">
     <div class="tmode-card tmode-scalp">
       <div class="tmode-emoji">🔨</div>
@@ -1931,7 +1912,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- SEGNALI -->
 <section id="segnali">
@@ -1940,7 +1920,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="4 SEGNALI" data-en="4 SIGNALS">4 SEGNALI</div>
     <div class="section-desc"><span class="it-content">Quattro indicatori indipendenti<br>attivabili/disattivabili singolarmente</span><span class="en-content">Four independent indicators<br>individually activatable/deactivatable</span></div>
   </div>
-  <div class="divider"></div>
   <div class="signal-grid">
     <div class="signal-card">
       <div class="signal-head">
@@ -2024,7 +2003,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- FILTRI -->
 <section id="filtri">
@@ -2033,7 +2011,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="SISTEMA FILTRI" data-en="FILTER SYSTEM">SISTEMA FILTRI</div>
     <div class="section-desc"><span class="it-content">Scanner AI · SMA 200 · SuperTrend<br>riducono i falsi segnali ammettendo entry solo nella direzione del trend principale</span><span class="en-content">Scanner AI · SMA 200 · SuperTrend<br>reduce false signals by allowing entries only in the main trend direction</span></div>
   </div>
-  <div class="divider"></div>
 
   <!-- NESSUNO: opzione separata -->
   <div style="position:relative;background:#0e1216;border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:.7rem 1.25rem;margin-bottom:1rem;display:flex;align-items:center;gap:1rem;transition:border-color .25s,box-shadow .25s;" onmouseenter="this.style.borderColor='rgba(255,255,255,0.45)';this.style.boxShadow='0 0 20px rgba(255,255,255,.07)'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.1)';this.style.boxShadow=''">
@@ -2095,7 +2072,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- FASCIA ORARIA -->
 <section id="fascia">
@@ -2104,7 +2080,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="FASCIA ORARIA" data-en="TIME WINDOW">FASCIA ORARIA</div>
     <div class="section-desc"><span class="it-content">Limita l'operatività a una finestra temporale precisa<br>obbligatoria per Target Profit/Loss, TP Limit e Mostra Fascia + Segnali</span><span class="en-content">Limits operations to a precise time window<br>mandatory for Target Profit/Loss, TP Limit and Show Band + Signals</span></div>
   </div>
-  <div class="divider"></div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:1.5rem;">
     <div class="hov-red" style="background:#130e12;border:1px solid rgba(255,68,68,.25);border-radius:10px;padding:1.75rem;">
@@ -2146,7 +2121,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- ENTRY -->
 <section id="entry">
@@ -2155,7 +2129,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="MAX SEGNALI · MEDIAZIONE · PIRAMIDAZIONE" data-en="MAX SIGNALS · AVERAGING · PYRAMIDING">MAX SEGNALI · MEDIAZIONE · PIRAMIDAZIONE</div>
     <div class="section-desc"><span class="it-content">Controllo avanzato del numero di ingressi per singolo trade</span><span class="en-content">Advanced control of the number of entries per single trade</span></div>
   </div>
-  <div class="divider"></div>
   <div class="info-row">
     <div class="info-chip"><span class="chip-label">Max Segnali = 0</span><span class="chip-val"><span class="it-content">∞ nessun limite</span><span class="en-content">∞ no limit</span></span></div>
     <div class="info-chip"><span class="chip-label">Max Segnali = N</span><span class="chip-val"><span class="it-content">max N ingressi per trade</span><span class="en-content">max N entries per trade</span></span></div>
@@ -2185,7 +2158,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- TAKE PROFIT -->
 <section id="tp">
@@ -2194,7 +2166,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="TAKE PROFIT" data-en="TAKE PROFIT">TAKE PROFIT</div>
     <div class="section-desc"><span class="it-content">3 Tipologie di uscita<br>Priorità: TP Limit &gt; TP a Valore &gt; TP a Punti</span><span class="en-content">3 Exit types<br>Priority: TP Limit &gt; TP by Value &gt; TP by Points</span></div>
   </div>
-  <div class="divider"></div>
   <div class="tp-grid">
     <div class="tp-card">
       <div class="tp-head">
@@ -2238,7 +2209,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- SL/TS -->
 <section id="slts">
@@ -2247,7 +2217,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="STOP LOSS &amp; TRAILING STOP" data-en="STOP LOSS &amp; TRAILING STOP">STOP LOSS &amp; TRAILING STOP</div>
     <div class="section-desc"><span class="it-content">Priorità a cascata: Trailing Dinamico &gt; Trailing Classico &gt; SL Valore &gt; SL Punti</span><span class="en-content">Cascading priority: Dynamic Trailing &gt; Classic Trailing &gt; SL Value &gt; SL Points</span></div>
   </div>
-  <div class="divider"></div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
     <!-- STOP LOSS -->
     <div class="hov" style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;">
@@ -2300,7 +2269,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- TARGET -->
 <section id="target">
@@ -2309,7 +2277,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="TARGET PROFIT &amp; TARGET LOSS" data-en="TARGET PROFIT &amp; TARGET LOSS">TARGET PROFIT &amp; TARGET LOSS</div>
     <div class="section-desc"><span class="it-content">Fermano l'intera strategia al raggiungimento dell'obiettivo giornaliero<br>richiedono Fascia Oraria attiva</span><span class="en-content">Stop the entire strategy when the daily target is reached<br>require active Time Window</span></div>
   </div>
-  <div class="divider"></div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:1.5rem;">
     <div class="hov-green" style="background:#071413;border:1px solid rgba(0,230,118,.2);border-radius:8px;padding:1.5rem;">
       <div style="font-family:var(--display);font-size:24px;color:var(--green);letter-spacing:3px;margin-bottom:.75rem;"><span class="it-content">💰 TARGET PROFIT</span><span class="en-content">💰 TARGET PROFIT</span></div>
@@ -2331,7 +2298,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- GRAFICA -->
 <section id="grafica">
@@ -2340,7 +2306,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="FUNZIONALITÀ GRAFICHE" data-en="CHART FEATURES">FUNZIONALITÀ GRAFICHE</div>
     <div class="section-desc"><span class="it-content">Strumenti professionali integrati per l'operatività quotidiana</span><span class="en-content">Integrated professional tools for daily operations</span></div>
   </div>
-  <div class="divider"></div>
   <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
     <div class="hov" style="background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;">
       <div style="font-size:22px;margin-bottom:.5rem;">📊</div>
@@ -2365,7 +2330,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- ALERT -->
 <section id="alert">
@@ -2374,7 +2338,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="ALERT &amp; WEBHOOK JSON" data-en="ALERT &amp; WEBHOOK JSON">ALERT &amp; WEBHOOK JSON</div>
     <div class="section-desc"><span class="it-content">4 alert sonori + 12 alert tecnici automatici per bot e automazione</span><span class="en-content">4 sound alerts + 12 automatic technical alerts for bots and automation</span></div>
   </div>
-  <div class="divider"></div>
   <div class="alert-section">
     <div class="hov" style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.25rem;">
       <div style="font-family:var(--mono);font-size:11px;color:var(--text-muted);letter-spacing:.15em;margin-bottom:.75rem;text-align:center;"><span class="it-content">🔔 4 ALERT SONORI</span><span class="en-content">🔔 4 SOUND ALERTS</span></div>
@@ -2423,7 +2386,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- SIMULAZIONE & BACKTEST -->
 <section id="sim">
@@ -2432,7 +2394,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="SIMULAZIONE &amp; BACKTEST STORICO" data-en="SIMULATION &amp; HISTORICAL BACKTEST">SIMULAZIONE &amp; BACKTEST STORICO</div>
     <div class="section-desc"><span class="it-content">Analisi retroattiva precisa su qualsiasi giorno del passato<br>funzione esclusiva integrata negli input</span><span class="en-content">Precise retroactive analysis on any day in the past<br>exclusive function integrated in inputs</span></div>
   </div>
-  <div class="divider" style="background:linear-gradient(90deg,var(--cyan),transparent)"></div>
 
   <div class="sim-card">
     <div class="sim-header">
@@ -2491,7 +2452,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <!-- STRUMENTI -->
 <section id="strumenti">
@@ -2500,7 +2460,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="CAMBIO STRUMENTO" data-en="INSTRUMENT CHANGE">CAMBIO STRUMENTO</div>
     <div class="section-desc"><span class="it-content">Verifica sempre questi <span style="color:var(--red);font-weight:700;">6 parametri</span> prima di operare su un nuovo strumento finanziario<br><span style="font-size:12px;color:var(--text-muted);">Tick/PT · Pt/Tick · Valore PT (x Tab) · Valore PT (x TP/SL) · Commissione · Valuta</span></span><span class="en-content">Always verify these <span style="color:var(--red);font-weight:700;">6 parameters</span> before trading a new financial instrument<br><span style="font-size:12px;color:var(--text-muted);">Tick/PT · Pt/Tick · PT Value (x Tab) · PT Value (x TP/SL) · Commission · Currency</span></span></div>
   </div>
-  <div class="divider"></div>
   <div class="instruments-grid">
     <div class="hov" style="border:1px solid rgba(0,188,212,0.5);border-radius:10px;padding:1.25rem;background:#071015;">
       <div class="instr-label"><span class="it-content">⚡ FUTURES USA</span><span class="en-content">⚡ USA FUTURES</span></div>
@@ -2534,7 +2493,6 @@ body.en div.en-content { display: block; }
 </section>
 
 <!-- MESSAGGI DI ERRORE -->
-<div class="section-sep"></div>
 
 <!-- FUSO ORARIO -->
 <section id="fuso">
@@ -2543,7 +2501,6 @@ body.en div.en-content { display: block; }
     <div class="section-title" data-it="FUSO ORARIO" data-en="TIME ZONE">FUSO ORARIO</div>
     <div class="section-desc"><span class="it-content">Impostazione del fuso orario in base al broker e alla stagione<br>fondamentale per allineare correttamente la Fascia Oraria</span><span class="en-content">Time zone setting based on broker and season<br>essential to correctly align the Time Window</span></div>
   </div>
-  <div class="divider"></div>
 
   <div style="background:var(--card);border:1px solid rgba(160,160,160,.3);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1.75rem;font-size:14px;color:var(--text);line-height:1.7;cursor:default;transition:border-color .25s,box-shadow .25s;" onmouseenter="this.style.borderColor='rgba(180,180,180,.75)';this.style.boxShadow='0 0 22px rgba(150,150,150,.25)'" onmouseleave="this.style.borderColor='rgba(160,160,160,.3)';this.style.boxShadow=''">
     <span class="it-content">Il parametro <strong style="color:var(--cyan)">Fuso Orario</strong> indica lo <strong style="color:var(--text-bright)">scarto in ore</strong> tra l'orario del broker e l'orario italiano. Impostarlo correttamente è essenziale: un valore errato causa uno spostamento della fascia operativa e genera segnali negli orari sbagliati. Il valore cambia in base al broker (<strong style="color:var(--gold)">CME Chicago</strong> o <strong style="color:var(--gold)">EUREX UTC</strong>) e alla stagione<br>(ora legale / ora solare).</span>
@@ -2624,7 +2581,6 @@ body.en div.en-content { display: block; }
   </div>
 </section>
 
-<div class="section-sep"></div>
 
 <section id="messaggi">
   <div class="section-header">
@@ -2632,11 +2588,10 @@ body.en div.en-content { display: block; }
     <div class="section-title"><span class="it-content">MESSAGGI DI ERRORE</span><span class="en-content">ERROR MESSAGES</span></div>
     <div class="section-desc"><span class="it-content">Tutti i messaggi di avviso e correzione<br>il BOT mostra questi avvisi direttamente sul grafico TradingView</span><span class="en-content">All warning and correction messages<br>the BOT shows these warnings directly on the TradingView chart</span></div>
   </div>
-  <div class="divider" style="background:linear-gradient(90deg,var(--red),transparent)"></div>
 
   <!-- CATEGORIA: CAMBIO MERCATO -->
   <div style="margin-bottom:1.25rem;">
-    <div style="font-family:var(--mono);font-size:11px;color:#ffffff;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;"><span class="it-content">⚙️ Cambio Mercato / Strumento</span><span class="en-content">⚙️ Market / Instrument Change</span></div>
+    <div style="font-family:var(--mono);font-size:11px;color:#ffffff;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;text-align:center;"><span class="it-content">⚙️ Cambio Mercato / Strumento</span><span class="en-content">⚙️ Market / Instrument Change</span></div>
     <div class="error-grid">
     <div class="error-row">
       <span class="error-cause"><span class="it-content">⛔ Futures EUREX rilevato con impostazioni CME (Mercato = USA o Fuso ≥ 6)</span><span class="en-content">⛔ EUREX Futures detected with CME settings (Market = USA or Timezone ≥ 6)</span></span>
@@ -2663,7 +2618,7 @@ body.en div.en-content { display: block; }
 
   <!-- CATEGORIA: SIMULAZIONE -->
   <div style="margin-bottom:1.25rem;">
-    <div style="font-family:var(--mono);font-size:11px;color:#ffffff;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;"><span class="it-content">📅 Simulazione &amp; Backtest</span><span class="en-content">📅 Simulation &amp; Backtest</span></div>
+    <div style="font-family:var(--mono);font-size:11px;color:#ffffff;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;text-align:center;"><span class="it-content">📅 Simulazione &amp; Backtest</span><span class="en-content">📅 Simulation &amp; Backtest</span></div>
     <div class="error-grid">
     <div class="error-row">
       <span class="error-cause"><span class="it-content">⛔ Giorno simulato non disponibile nel grafico (storico insufficiente / timeframe basso / giorno festivo)</span><span class="en-content">⛔ Simulated day not available on chart (insufficient history / low timeframe / holiday)</span></span>
@@ -2678,7 +2633,7 @@ body.en div.en-content { display: block; }
 
   <!-- CATEGORIA: PROTEZIONE TRADE -->
   <div style="margin-bottom:1.25rem;">
-    <div style="font-family:var(--mono);font-size:11px;color:#ffffff;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;"><span class="it-content">🛡️ Protezione Trade (Stop &amp; Profit)</span><span class="en-content">🛡️ Trade Protection (Stop &amp; Profit)</span></div>
+    <div style="font-family:var(--mono);font-size:11px;color:#ffffff;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;text-align:center;"><span class="it-content">🛡️ Protezione Trade (Stop &amp; Profit)</span><span class="en-content">🛡️ Trade Protection (Stop &amp; Profit)</span></div>
     <div class="error-grid">
     <div class="error-row">
       <span class="error-cause"><span class="it-content">⛔ Nessun PROFIT impostato e nessuno STOP impostato<br>strategia priva di finalità 💀</span><span class="en-content">⛔ No PROFIT set and no STOP set<br>strategy with no purpose 💀</span></span>
@@ -2697,7 +2652,7 @@ body.en div.en-content { display: block; }
 
   <!-- CATEGORIA: TARGET PROFIT / LOSS -->
   <div style="margin-bottom:1.25rem;">
-    <div style="font-family:var(--mono);font-size:11px;color:#ffffff;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;"><span class="it-content">💰 Target Profit / Target Loss</span><span class="en-content">💰 Target Profit / Target Loss</span></div>
+    <div style="font-family:var(--mono);font-size:11px;color:#ffffff;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;text-align:center;"><span class="it-content">💰 Target Profit / Target Loss</span><span class="en-content">💰 Target Profit / Target Loss</span></div>
     <div class="error-grid">
     <div class="error-row">
       <span class="error-cause"><span class="it-content">⛔ Target Profit + Target Loss attivi senza Fascia Oraria</span><span class="en-content">⛔ Target Profit + Target Loss active without Time Window</span></span>
@@ -2716,7 +2671,7 @@ body.en div.en-content { display: block; }
 
   <!-- CATEGORIA: TP LIMIT -->
   <div style="margin-bottom:1.25rem;">
-    <div style="font-family:var(--mono);font-size:11px;color:#ffffff;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;"><span class="it-content">🎯 TP Limit (Prezzo Assoluto)</span><span class="en-content">🎯 TP Limit (Absolute Price)</span></div>
+    <div style="font-family:var(--mono);font-size:11px;color:#ffffff;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;text-align:center;"><span class="it-content">🎯 TP Limit (Prezzo Assoluto)</span><span class="en-content">🎯 TP Limit (Absolute Price)</span></div>
     <div class="error-grid">
     <div class="error-row">
       <span class="error-cause"><span class="it-content">⛔ TP Limit attivo senza Fascia Oraria</span><span class="en-content">⛔ TP Limit active without Time Window</span></span>
@@ -3745,8 +3700,9 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 
 <!-- GALLERIA MODAL -->
-<div id="gallery-modal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);overflow-y:auto;padding:52px 20px 20px;" onclick="if(event.target===this)closeGallery();">
+<div id="gallery-modal" style="display:none;position:fixed;inset:0;z-index:99999;" onclick="if(event.target===this)closeGallery();">
   <button onclick="closeGallery()" style="position:fixed;top:18px;right:18px;background:#341519;border:2px solid rgba(255,68,68,.55);color:#ff6666;font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;cursor:pointer;font-family:var(--mono);letter-spacing:.12em;transition:all .2s;z-index:100000;display:flex;align-items:center;gap:8px;" onmouseenter="this.style.background='rgba(255,68,68,.4)';this.style.borderColor='rgba(255,68,68,.9)';this.style.color='#fff'" onmouseleave="this.style.background='rgba(255,68,68,.18)';this.style.borderColor='rgba(255,68,68,.55)';this.style.color='#ff6666'">✕ &nbsp;<span class="it-content">CHIUDI</span><span class="en-content">CLOSE</span></button>
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);overflow-y:auto;padding:52px 20px 20px;" onclick="if(event.target===this)closeGallery();">
 
   <div style="max-width:860px;margin:0 auto;">
 
@@ -3832,6 +3788,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <span class="en-content">📄 Browse the <strong style="color:var(--gold);">DOCUMENTS</strong> section — PDFs · Guides · Manuals</span>
     </div>
   </div>
+  </div>
 </div>
 
 <!-- ZOOM overlay -->
@@ -3846,8 +3803,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <!-- VIDEO GALLERY MODAL -->
-<div id="video-gallery-modal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);overflow-y:auto;padding:60px 20px 40px;" onclick="if(event.target===this)closeVideoGallery();">
+<div id="video-gallery-modal" style="display:none;position:fixed;inset:0;z-index:99999;" onclick="if(event.target===this)closeVideoGallery();">
   <button onclick="closeVideoGallery()" style="position:fixed;top:18px;right:18px;background:#341519;border:2px solid rgba(255,68,68,.55);color:#ff6666;font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;cursor:pointer;font-family:var(--mono);letter-spacing:.12em;transition:all .2s;z-index:100000;display:flex;align-items:center;gap:8px;" onmouseenter="this.style.background='rgba(255,68,68,.4)';this.style.borderColor='rgba(255,68,68,.9)';this.style.color='#fff'" onmouseleave="this.style.background='rgba(255,68,68,.18)';this.style.borderColor='rgba(255,68,68,.55)';this.style.color='#ff6666'">✕ &nbsp;<span class="it-content">CHIUDI</span><span class="en-content">CLOSE</span></button>
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);overflow-y:auto;padding:60px 20px 40px;" onclick="if(event.target===this)closeVideoGallery();">
   <div style="max-width:700px;margin:0 auto;text-align:center;">
     <div style="font-family:var(--display);font-size:32px;color:var(--gold);letter-spacing:4px;margin-bottom:.4rem;">🎥 <span class="it-content">VIDEO</span><span class="en-content">VIDEOS</span></div>
     <div style="font-family:var(--mono);font-size:12px;color:#ffffff;letter-spacing:.15em;margin-bottom:2.5rem;"><span class="it-content">Demo · Tutorial · Funzioni</span><span class="en-content">Demo · Tutorial · Features</span></div>
@@ -3901,6 +3859,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <span class="en-content">📄 Browse the <strong style="color:var(--gold);">DOCUMENTS</strong> section — PDFs · Guides · Manuals</span>
     </div>
   </div>
+  </div>
 </div>
 <!-- PWA: Service Worker Registration -->
 <script>
@@ -3927,8 +3886,9 @@ window.addEventListener('beforeinstallprompt', e => {
 });
 </script>
 <!-- TRADINGVIEW DOCS MODAL -->
-<div id="tv-docs-modal" style="display:none;position:fixed;inset:0;z-index:999998;background:rgba(0,0,0,0.93);backdrop-filter:blur(8px);overflow-y:auto;padding:60px 20px 40px;" onclick="if(event.target===this)closeTradingViewDocs();">
+<div id="tv-docs-modal" style="display:none;position:fixed;inset:0;z-index:999998;" onclick="if(event.target===this)closeTradingViewDocs();">
   <button onclick="closeTradingViewDocs()" style="position:fixed;top:18px;right:18px;background:#341519;border:2px solid rgba(255,68,68,.55);color:#ff6666;font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;cursor:pointer;font-family:var(--mono);letter-spacing:.12em;z-index:100000;display:flex;align-items:center;gap:8px;transition:all .2s;" onmouseenter="this.style.background='rgba(255,68,68,.4)';this.style.color='#fff'" onmouseleave="this.style.background='rgba(255,68,68,.18)';this.style.color='#ff6666'">✕ &nbsp;<span class="it-content">CHIUDI</span><span class="en-content">CLOSE</span></button>
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.93);backdrop-filter:blur(8px);overflow-y:auto;padding:60px 20px 40px;" onclick="if(event.target===this)closeTradingViewDocs();">
   <div style="max-width:760px;margin:0 auto;text-align:center;">
     <div style="font-family:var(--display);font-size:28px;color:var(--gold);letter-spacing:4px;margin-bottom:.4rem;">📊 MANUALE BOT ALGO</div>
     <div style="font-family:var(--mono);font-size:12px;color:var(--text-muted);letter-spacing:.15em;margin-bottom:2rem;"><span class="it-content">TradingView · Alert · Pine Script</span><span class="en-content">TradingView · Alerts · Pine Script</span></div>
@@ -3996,11 +3956,13 @@ window.addEventListener('beforeinstallprompt', e => {
 
     </div>
   </div>
+  </div>
 </div>
 
 <!-- PYTHON DOCS MODAL -->
-<div id="python-docs-modal" style="display:none;position:fixed;inset:0;z-index:999998;background:rgba(0,0,0,0.93);backdrop-filter:blur(8px);overflow-y:auto;padding:60px 20px 40px;" onclick="if(event.target===this)closePythonDocs();">
+<div id="python-docs-modal" style="display:none;position:fixed;inset:0;z-index:999998;" onclick="if(event.target===this)closePythonDocs();">
   <button onclick="closePythonDocs()" style="position:fixed;top:18px;right:18px;background:#341519;border:2px solid rgba(255,68,68,.55);color:#ff6666;font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;cursor:pointer;font-family:var(--mono);letter-spacing:.12em;z-index:100000;display:flex;align-items:center;gap:8px;transition:all .2s;" onmouseenter="this.style.background='rgba(255,68,68,.4)';this.style.color='#fff'" onmouseleave="this.style.background='rgba(255,68,68,.18)';this.style.color='#ff6666'">✕ &nbsp;<span class="it-content">CHIUDI</span><span class="en-content">CLOSE</span></button>
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.93);backdrop-filter:blur(8px);overflow-y:auto;padding:60px 20px 40px;" onclick="if(event.target===this)closePythonDocs();">
   <div style="max-width:760px;margin:0 auto;text-align:center;">
     <div style="font-family:var(--display);font-size:28px;color:var(--gold);letter-spacing:4px;margin-bottom:.4rem;">🐍 PYTHON BRIDGE</div>
     <div style="font-family:var(--mono);font-size:12px;color:var(--text-muted);letter-spacing:.15em;margin-bottom:2rem;"><span class="it-content">Guide e Manuali</span><span class="en-content">Guides and Manuals</span></div>
@@ -4033,6 +3995,7 @@ window.addEventListener('beforeinstallprompt', e => {
       </div>
 
     </div>
+  </div>
   </div>
 </div>
 
@@ -4096,8 +4059,9 @@ window.addEventListener('beforeinstallprompt', e => {
 </div>
 
 <!-- DOCUMENTI GALLERY MODAL -->
-<div id="doc-gallery-modal" style="display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);overflow-y:auto;padding:60px 20px 40px;" onclick="if(event.target===this)closeDocGallery();">
+<div id="doc-gallery-modal" style="display:none;position:fixed;inset:0;z-index:99999;" onclick="if(event.target===this)closeDocGallery();">
   <button onclick="closeDocGallery()" style="position:fixed;top:18px;right:18px;background:#341519;border:2px solid rgba(255,68,68,.55);color:#ff6666;font-size:13px;font-weight:700;padding:8px 20px;border-radius:8px;cursor:pointer;font-family:var(--mono);letter-spacing:.12em;transition:all .2s;z-index:100000;display:flex;align-items:center;gap:8px;" onmouseenter="this.style.background='rgba(255,68,68,.4)';this.style.borderColor='rgba(255,68,68,.9)';this.style.color='#fff'" onmouseleave="this.style.background='rgba(255,68,68,.18)';this.style.borderColor='rgba(255,68,68,.55)';this.style.color='#ff6666'">✕ &nbsp;<span class="it-content">CHIUDI</span><span class="en-content">CLOSE</span></button>
+  <div style="position:absolute;inset:0;background:rgba(0,0,0,0.92);backdrop-filter:blur(8px);overflow-y:auto;padding:60px 20px 40px;" onclick="if(event.target===this)closeDocGallery();">
   <div style="max-width:760px;margin:0 auto;text-align:center;">
     <div style="font-family:var(--display);font-size:32px;color:var(--gold);letter-spacing:4px;margin-bottom:.4rem;">📄 <span class="it-content">DOCUMENTI</span><span class="en-content">DOCUMENTS</span></div>
     <div style="font-family:var(--mono);font-size:12px;color:var(--text-muted);letter-spacing:.15em;margin-bottom:2rem;"><span class="it-content">PDF · Guide · Manuali</span><span class="en-content">PDFs · Guides · Manuals</span></div>
@@ -4158,6 +4122,7 @@ window.addEventListener('beforeinstallprompt', e => {
       <span class="it-content">📹 Guarda i video nella sezione <strong style="color:var(--gold);">VIDEO</strong> — demo live · tutorial · strategie operative</span>
       <span class="en-content">📹 Watch videos in the <strong style="color:var(--gold);">VIDEO</strong> section — live demo · tutorial · trading strategies</span>
     </div>
+  </div>
   </div>
 </div>
 
