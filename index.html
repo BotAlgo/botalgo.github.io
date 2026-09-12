@@ -4033,10 +4033,10 @@ window.addEventListener('beforeinstallprompt', e => {
 
     <!-- Bottoni ACCEDI / ANNULLA -->
     <div style="display:flex;gap:10px;justify-content:center;margin-top:10px;margin-bottom:20px;">
-      <button onclick="playZoomOpenSound();checkDocPassword()" style="background:linear-gradient(135deg,#c8940a,#ffd700);border:none;color:#000;font-family:var(--mono);font-size:12px;font-weight:700;padding:11px 28px;border-radius:8px;cursor:pointer;letter-spacing:.12em;transition:filter .2s,box-shadow .2s,transform .2s;" onmouseover="this.style.filter='brightness(1.25)';this.style.boxShadow='0 0 18px rgba(255,215,0,.6)';this.style.transform='translateY(-1px)'" onmouseout="this.style.filter='';this.style.boxShadow='';this.style.transform='translateY(0)'">
+      <button onclick="playZoomOpenSound();checkDocPassword()" style="background:linear-gradient(135deg,#c8940a,#ffd700);border:none;color:#000;font-family:var(--mono);font-size:12px;font-weight:700;padding:11px 28px;border-radius:8px;cursor:pointer;letter-spacing:.12em;transition:filter .2s,box-shadow .2s,transform .2s;" onmouseover="this.style.filter='brightness(1.25)';this.style.boxShadow='0 0 18px rgba(255,215,0,.5)';this.style.transform='translateY(-1px)'" onmouseout="this.style.filter='';this.style.boxShadow='';this.style.transform='translateY(0)'">
         <span class="it-content">🔓 ACCEDI</span><span class="en-content">🔓 ENTER</span>
       </button>
-      <button onclick="playZoomCloseSound();closeDocPasswordOverlay()" style="background:#2c1417;border:1.5px solid rgba(255,68,68,.7);color:#ff4444;font-family:var(--mono);font-size:12px;padding:11px 20px;border-radius:8px;cursor:pointer;letter-spacing:.1em;transition:background .2s,box-shadow .2s,transform .2s;" onmouseover="this.style.background='rgba(255,68,68,.3)';this.style.boxShadow='0 0 16px rgba(255,68,68,.5)';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='rgba(255,68,68,.15)';this.style.boxShadow='';this.style.transform='translateY(0)'">
+      <button onclick="playZoomCloseSound();closeDocPasswordOverlay()" style="background:#2c1417;border:1.5px solid rgba(255,68,68,.7);color:#ff4444;font-family:var(--mono);font-size:12px;padding:11px 20px;border-radius:8px;cursor:pointer;letter-spacing:.1em;transition:background .2s,box-shadow .2s,transform .2s;" onmouseover="this.style.background='rgba(255,68,68,.3)';this.style.boxShadow='0 0 18px rgba(255,68,68,.5)';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='rgba(255,68,68,.15)';this.style.boxShadow='';this.style.transform='translateY(0)'">
         <span class="it-content">ANNULLA</span><span class="en-content">CANCEL</span>
       </button>
     </div>
@@ -4046,9 +4046,9 @@ window.addEventListener('beforeinstallprompt', e => {
 
     <!-- Bottone SCOPRI I PIANI incorniciato, grande, apre direttamente la sezione prezzi -->
     <div onclick="playCtaSound();closeDocPasswordOverlay();document.getElementById('prezzi').scrollIntoView({behavior:'instant'});"
-      style="background:#16160f;border:1.5px solid rgba(200,148,10,0.6);border-radius:10px;padding:16px 20px;font-family:var(--mono);font-size:13px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:.12em;cursor:pointer;transition:background .25s,border-color .25s,box-shadow .25s;text-align:center;"
-      onmouseover="this.style.background='rgba(200,148,10,0.18)';this.style.borderColor='rgba(200,148,10,1)';this.style.boxShadow='0 0 22px rgba(200,148,10,0.4)'"
-      onmouseout="this.style.background='rgba(200,148,10,0.08)';this.style.borderColor='rgba(200,148,10,0.6)';this.style.boxShadow=''">
+      style="background:#16160f;border:1.5px solid rgba(200,148,10,0.6);border-radius:10px;padding:16px 20px;font-family:var(--mono);font-size:13px;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:.12em;cursor:pointer;transition:background .25s,border-color .25s,box-shadow .25s,transform .2s;text-align:center;"
+      onmouseover="this.style.background='rgba(200,148,10,0.18)';this.style.borderColor='rgba(200,148,10,1)';this.style.boxShadow='0 0 18px rgba(200,148,10,0.5)';this.style.transform='translateY(-1px)'"
+      onmouseout="this.style.background='rgba(200,148,10,0.08)';this.style.borderColor='rgba(200,148,10,0.6)';this.style.boxShadow='';this.style.transform='translateY(0)'">
       <div class="it-content">💎 Non sei abbonato?</div>
       <div class="it-content">→ SCOPRI I PIANI DI ABBONAMENTO</div>
       <div class="en-content">💎 Not subscribed?</div>
