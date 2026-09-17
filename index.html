@@ -317,6 +317,7 @@ section {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
+  text-wrap: pretty;
 }
 
 /* ── FLOW STEPS ── */
@@ -365,6 +366,7 @@ section {
   color: var(--red);
   cursor: default;
   transition: border-color .25s, box-shadow .25s, background .25s;
+  text-wrap: pretty;
 }
 .flow-warning:hover {
   border-color: rgba(255,68,68,.9);
@@ -723,7 +725,7 @@ img {
   box-shadow: 0 0 18px rgba(255,68,68,.25);
   background:#1d1014;
 }
-.error-cause { font-family: var(--mono); font-size: 12px; color: var(--red); }
+.error-cause { font-family: var(--mono); font-size: 12px; color: var(--red); text-wrap: pretty; }
 .error-fix {
   font-family: var(--mono);
   font-size: 11px;
@@ -732,7 +734,8 @@ img {
   border: 1px solid var(--green);
   border-radius: 4px;
   padding: 3px 10px;
-  white-space: nowrap;
+  white-space: normal;
+  text-wrap: pretty;
 }
 
 /* ── TRADING MODES ── */
@@ -2153,7 +2156,7 @@ body.en div.en-content { display: block; }
       </div>
     </div>
   </div>
-  <div id="pir-warning" style="margin-top:1rem; background:#160e12; border:1px solid rgba(255,68,68,.2); border-radius:6px; padding:.75rem 1rem; font-size:12px; color:var(--text-muted); text-align:center; cursor:default;">
+  <div id="pir-warning" style="margin-top:1rem; background:#160e12; border:1px solid rgba(255,68,68,.2); border-radius:6px; padding:.75rem 1rem; font-size:12px; color:var(--text-muted); text-align:center; cursor:default; text-wrap:pretty;">
     ⚠️ <span class="it-content">In entrambi i casi il BOT aggiorna automaticamente: <strong style="color:var(--text)">Prezzo Medio · Take Profit · Stop Loss · Trailing Stop · Etichette grafiche</strong></span><span class="en-content">In both cases the BOT automatically updates: <strong style="color:var(--text)">Average Price · Take Profit · Stop Loss · Trailing Stop · Chart Labels</strong></span>
   </div>
 </section>
@@ -2602,15 +2605,15 @@ body.en div.en-content { display: block; }
       <span class="error-fix"><span class="it-content">✅ Sez. 8: Mercato = USA · Sez. 15: Fuso = 7</span><span class="en-content">✅ Sec. 8: Market = USA · Sec. 15: Timezone = 7</span></span>
     </div>
     <div class="error-row">
-      <span class="error-cause"><span class="it-content">⛔ Commodity rilevata con Gap Mercato Cash attivo<br>il simbolo non ha mercato cash</span><span class="en-content">⛔ Commodity detected with Cash Market Gap active<br>the symbol has no cash market</span></span>
+      <span class="error-cause"><span class="it-content">⛔ Commodity rilevata con Gap Mercato Cash attivo il simbolo non ha mercato cash</span><span class="en-content">⛔ Commodity detected with Cash Market Gap active the symbol has no cash market</span></span>
       <span class="error-fix"><span class="it-content">✅ Sez. 8: Disattiva "Mostra Gap – Mercato Cash"</span><span class="en-content">✅ Sec. 8: Disable "Show Gap – Cash Market"</span></span>
     </div>
     <div class="error-row">
-      <span class="error-cause"><span class="it-content">⛔ Strumento non riconosciuto<br>dati non compilati o ticker non confermato</span><span class="en-content">⛔ Instrument not recognized<br>data not filled or ticker not confirmed</span></span>
+      <span class="error-cause"><span class="it-content">⛔ Strumento non riconosciuto dati non compilati o ticker non confermato</span><span class="en-content">⛔ Instrument not recognized data not filled or ticker not confirmed</span></span>
       <span class="error-fix"><span class="it-content">✅ Compilare i parametri strumento e confermare il ticker</span><span class="en-content">✅ Fill in instrument parameters and confirm the ticker</span></span>
     </div>
     <div class="error-row">
-      <span class="error-cause"><span class="it-content">⛔ Scanner BOT attivo con Filtri manuali selezionati<br>SMA 200 o SuperTrend biffati insieme allo Scanner</span><span class="en-content">⛔ Scanner BOT active with Manual Filters selected<br>SMA 200 or SuperTrend checked together with Scanner</span></span>
+      <span class="error-cause"><span class="it-content">⛔ Scanner BOT attivo con Filtri manuali selezionati SMA 200 o SuperTrend biffati insieme allo Scanner</span><span class="en-content">⛔ Scanner BOT active with Manual Filters selected SMA 200 or SuperTrend checked together with Scanner</span></span>
       <span class="error-fix"><span class="it-content">✅ Rimuovi biffatura da SMA 200 / SuperTrend</span><span class="en-content">✅ Uncheck SMA 200 / SuperTrend</span></span>
     </div>
   </div>
@@ -2636,15 +2639,15 @@ body.en div.en-content { display: block; }
     <div style="font-family:var(--mono);font-size:11px;color:#ffffff;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.6rem;text-align:center;"><span class="it-content">🛡️ Protezione Trade (Stop &amp; Profit)</span><span class="en-content">🛡️ Trade Protection (Stop &amp; Profit)</span></div>
     <div class="error-grid">
     <div class="error-row">
-      <span class="error-cause"><span class="it-content">⛔ Nessun PROFIT impostato e nessuno STOP impostato<br>strategia priva di finalità 💀</span><span class="en-content">⛔ No PROFIT set and no STOP set<br>strategy with no purpose 💀</span></span>
+      <span class="error-cause"><span class="it-content">⛔ Nessun PROFIT impostato e nessuno STOP impostato strategia priva di finalità 💀</span><span class="en-content">⛔ No PROFIT set and no STOP set strategy with no purpose 💀</span></span>
       <span class="error-fix"><span class="it-content">✅ Imposta almeno un TP e uno SL / TS</span><span class="en-content">✅ Set at least one TP and one SL / TS</span></span>
     </div>
     <div class="error-row">
-      <span class="error-cause"><span class="it-content">⛔ Nessuno STOP impostato (SL e TS assenti)<br>TP presente ma trade non protetto</span><span class="en-content">⛔ No STOP set (SL and TS absent)<br>TP present but trade unprotected</span></span>
+      <span class="error-cause"><span class="it-content">⛔ Nessuno STOP impostato (SL e TS assenti) TP presente ma trade non protetto</span><span class="en-content">⛔ No STOP set (SL and TS absent) TP present but trade unprotected</span></span>
       <span class="error-fix"><span class="it-content">✅ Imposta Stop Loss o Trailing Stop</span><span class="en-content">✅ Set Stop Loss or Trailing Stop</span></span>
     </div>
     <div class="error-row">
-      <span class="error-cause"><span class="it-content">⛔ Nessun PROFIT impostato (TP e Target Profit assenti)<br>SL/TS presenti ma nessun obiettivo</span><span class="en-content">⛔ No PROFIT set (TP and Target Profit absent)<br>SL/TS present but no target</span></span>
+      <span class="error-cause"><span class="it-content">⛔ Nessun PROFIT impostato (TP e Target Profit assenti) SL/TS presenti ma nessun obiettivo</span><span class="en-content">⛔ No PROFIT set (TP and Target Profit absent) SL/TS present but no target</span></span>
       <span class="error-fix"><span class="it-content">✅ Imposta Take Profit o Target Profit</span><span class="en-content">✅ Set Take Profit or Target Profit</span></span>
     </div>
   </div>
@@ -2666,6 +2669,10 @@ body.en div.en-content { display: block; }
       <span class="error-cause"><span class="it-content">⛔ Target Loss attivo senza Fascia Oraria</span><span class="en-content">⛔ Target Loss active without Time Window</span></span>
       <span class="error-fix"><span class="it-content">✅ Attivare la Fascia Oraria</span><span class="en-content">✅ Enable the Time Window</span></span>
     </div>
+    <div class="error-row">
+      <span class="error-cause"><span class="it-content">⛔ Limita Segnali su Target Profit attivo ma Target Profit non impostato</span><span class="en-content">⛔ Limit Signals on Target Profit active but Target Profit not set</span></span>
+      <span class="error-fix"><span class="it-content">✅ Impostare Target Profit</span><span class="en-content">✅ Set Target Profit</span></span>
+    </div>
   </div>
   </div>
 
@@ -2678,7 +2685,7 @@ body.en div.en-content { display: block; }
       <span class="error-fix"><span class="it-content">✅ Attivare la Fascia Oraria</span><span class="en-content">✅ Enable the Time Window</span></span>
     </div>
     <div class="error-row">
-      <span class="error-cause"><span class="it-content">⛔ TP Limit attivo con BUY &amp; SELL<br>modalità incompatibile</span><span class="en-content">⛔ TP Limit active with BUY &amp; SELL<br>incompatible mode</span></span>
+      <span class="error-cause"><span class="it-content">⛔ TP Limit attivo con BUY &amp; SELL modalità incompatibile</span><span class="en-content">⛔ TP Limit active with BUY &amp; SELL incompatible mode</span></span>
       <span class="error-fix"><span class="it-content">✅ Selezionare solo BUY oppure solo SELL</span><span class="en-content">✅ Select BUY only or SELL only</span></span>
     </div>
     <div class="error-row">
@@ -2686,17 +2693,17 @@ body.en div.en-content { display: block; }
       <span class="error-fix"><span class="it-content">✅ Inserire un prezzo nel campo TP Limit</span><span class="en-content">✅ Enter a price in the TP Limit field</span></span>
     </div>
     <div class="error-row">
-      <span class="error-cause"><span class="it-content">⛔ BUY + prezzo TP Limit ≤ prezzo attuale<br>profitto impossibile</span><span class="en-content">⛔ BUY + TP Limit price ≤ current price<br>profit impossible</span></span>
+      <span class="error-cause"><span class="it-content">⛔ BUY + prezzo TP Limit ≤ prezzo attuale profitto impossibile</span><span class="en-content">⛔ BUY + TP Limit price ≤ current price profit impossible</span></span>
       <span class="error-fix"><span class="it-content">✅ Inserire un prezzo SUPERIORE al corrente</span><span class="en-content">✅ Enter a price ABOVE the current one</span></span>
     </div>
     <div class="error-row">
-      <span class="error-cause"><span class="it-content">⛔ SELL + prezzo TP Limit ≥ prezzo attuale<br>profitto impossibile</span><span class="en-content">⛔ SELL + TP Limit price ≥ current price<br>profit impossible</span></span>
+      <span class="error-cause"><span class="it-content">⛔ SELL + prezzo TP Limit ≥ prezzo attuale profitto impossibile</span><span class="en-content">⛔ SELL + TP Limit price ≥ current price profit impossible</span></span>
       <span class="error-fix"><span class="it-content">✅ Inserire un prezzo INFERIORE al corrente</span><span class="en-content">✅ Enter a price BELOW the current one</span></span>
     </div>
   </div>
   </div>
 
-  <div style="background:#131512;border:1px solid rgba(255,213,79,.2);border-radius:8px;padding:1rem 1.25rem;font-family:var(--mono);font-size:12px;color:var(--gold);text-align:center;cursor:default;transition:border-color .25s,box-shadow .25s,background .25s;" onmouseenter="this.style.borderColor='rgba(255,213,79,.9)';this.style.boxShadow='0 0 24px rgba(255,213,79,.35)';this.style.background='rgba(255,213,79,.1)'" onmouseleave="this.style.borderColor='rgba(255,213,79,.2)';this.style.boxShadow='';this.style.background='rgba(255,213,79,.05)'">
+  <div style="background:#131512;border:1px solid rgba(255,213,79,.2);border-radius:8px;padding:1rem 1.25rem;font-family:var(--mono);font-size:12px;color:var(--gold);text-align:center;cursor:default;transition:border-color .25s,box-shadow .25s,background .25s;text-wrap:pretty;" onmouseenter="this.style.borderColor='rgba(255,213,79,.9)';this.style.boxShadow='0 0 24px rgba(255,213,79,.35)';this.style.background='rgba(255,213,79,.1)'" onmouseleave="this.style.borderColor='rgba(255,213,79,.2)';this.style.boxShadow='';this.style.background='rgba(255,213,79,.05)'">
     <span class="it-content"><span class="it-content">⚠️ Tutti i messaggi di errore vengono visualizzati direttamente sul grafico TradingView<br><strong style="color:#ffffff;">A CENTRO sinistra</strong><br>con sfondo rosso e testo bianco</span><span class="en-content">⚠️ All error messages are shown directly on the TradingView chart<br><strong style="color:#ffffff;">CENTER left</strong><br>with red background and white text</span></span><span class="en-content">⚠️ All error messages are displayed directly on the TradingView chart<br><strong style="color:#ffffff;">CENTER left</strong><br>with red background and white text</span>
   </div>
 </section>
